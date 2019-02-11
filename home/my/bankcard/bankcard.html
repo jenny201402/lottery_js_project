@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../less/my.css">
+</head>
+<body ms-controller="my.bankcard">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">银行卡</h1>
+</header>
+<div class="mui-content">
+    <div ms-if="showView" class="bankcard-content">
+        <div ms-if="hasBind === '1'" class="card-box">
+            <div class="bank-logo">
+                <img src="../../../images/bank-zsyh.png" alt="">
+                <a ms-on-tap="openUpdateModule" class="update-btn "><span class="mui-icon mui-icon-gear"></span></a>
+            </div>
+            <div class="bank-message">
+                <div class="name">
+                    开户姓名：<span>{{bankInfo.fullName}}</span>
+                </div>
+                <div class="number">
+                    开户账号：<span>{{bankInfo.cardNo}}</span>
+                </div>
+                <div class="station">
+                    开户网点：<span>{{bankInfo.subAddress}}</span>
+                </div>
+            </div>
+        </div>
+        <div ms-on-tap="openAddModule" ms-if="hasBind === '0'" class="add-card-btn">
+           点击绑定银行卡
+        </div>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/extends.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="bankcard.js"></script>
+</body>
+</html>

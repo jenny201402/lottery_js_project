@@ -1,0 +1,968 @@
+/*
+公用基础样式表
+*/
+[ms-controller],
+[ms-important] {
+  visibility: hidden;
+}
+.red {
+  color: red;
+}
+.blue {
+  color: #007aff;
+}
+.green {
+  color: green;
+}
+.cheng {
+  color: #fdbc00;
+}
+.zihong {
+  color: #D7213b;
+}
+body {
+  background: #ffffff;
+}
+.mui-content {
+  background: #ffffff;
+}
+.title-bg {
+  background: #D7213b;
+}
+.title-bg .title-left {
+  text-align: left!important;
+}
+.title-bg h1 {
+  color: #ffffff;
+}
+.title-bg .mui-action-back {
+  color: #ffffff;
+}
+.title-bg .index-personal {
+  position: absolute;
+  right: 20px;
+  z-index: 1000;
+  font-size: 0;
+}
+.title-bg .index-personal a {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 10px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 9px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+.title-bg .index-personal a.no-b {
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 0;
+}
+.title-bg .index-personal a .mui-icon {
+  display: inline-block;
+  padding: 0 15px 0 5px;
+  font-size: 20px;
+}
+.title-bg .lottery-menu {
+  color: #ffffff;
+}
+.title-bg .m-backdrop {
+  position: fixed;
+  top: 44px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.title-bg .m-backdrop .menu-list {
+  width: 150px;
+  background: #ffffff;
+  margin-right: 10px;
+  border: 1px solid #c8c7cc;
+}
+.title-bg .m-backdrop .menu-list .list {
+  text-align: center;
+  border-bottom: 1px solid #c8c7cc;
+  padding: 8px 0;
+  font-size: 16px;
+}
+.title-bg .m-backdrop .menu-list .list:last-child {
+  border-bottom: 0;
+}
+.title-bg .m-backdrop .menu-list .list .load-icon {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+.mui-bar-tab-home.home-index > .mui-tab-item-home.mui-active {
+  color: #D7213b;
+}
+.mui-bar-home {
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  height: 44px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-bottom: 0;
+  background-color: #f7f7f7;
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.85);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.mui-bar-tab-home {
+  bottom: 0;
+  display: table;
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  table-layout: fixed;
+  border-top: 0;
+  border-bottom: 0;
+  -webkit-touch-callout: none;
+}
+.mui-bar-tab-home .mui-tab-item-home {
+  display: table-cell;
+  overflow: hidden;
+  width: 1%;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #929292;
+}
+.mui-bar-tab-home .mui-tab-item-home .mui-icon {
+  top: 3px;
+  width: 24px;
+  height: 24px;
+  padding-top: 4px;
+  padding-bottom: 0;
+}
+.mui-bar-tab-home .mui-tab-item-home .mui-icon ~ .mui-tab-label {
+  font-size: 11px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.table-list {
+  font-size: 14px;
+  text-align: center;
+}
+.table-list .list-th,
+.table-list .list-td {
+  border-bottom: 1px solid #c8c7cc;
+}
+.table-list .list-th {
+  background: #F6F6F6;
+  height: 45px;
+  line-height: 45px;
+}
+.table-list .list-td {
+  height: 50px;
+  line-height: 50px;
+}
+.next-pre-btn {
+  width: 100%;
+  height: 40px;
+  background: #D7213b;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+}
+.tab-top-nav {
+  width: 100%;
+  height: 50px;
+  font-size: 0;
+}
+.tab-top-nav .tab-item {
+  color: #333333;
+  font-size: 14px;
+  text-align: center;
+  display: inline-block;
+  height: 50px;
+  line-height: 48px;
+  border-bottom: 1px solid #c8c7cc;
+  width: 50%;
+}
+.tab-top-nav .tab-item.active {
+  border-bottom: 2px solid #D7213b;
+  color: #D7213b;
+}
+.betting-content {
+  width: 100%;
+  position: relative;
+  height: 100%;
+  /*height: 100vh;*/
+}
+.betting-content .top-betting-result {
+  padding: 4px;
+  font-size: 14px;
+}
+.betting-content .top-betting-result .result {
+  margin-left: 5px;
+}
+.betting-content .top-betting-result .result .result-ball-ssc {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 18px;
+  background: #D7213b;
+}
+.betting-content .top-betting-result .result .result-ball-pk10 {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 2px;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk1,
+.betting-content .top-betting-result .result .result-ball-pk10.pk01 {
+  background: #e0e02b;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk2,
+.betting-content .top-betting-result .result .result-ball-pk10.pk02 {
+  background: #0289ff;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk3,
+.betting-content .top-betting-result .result .result-ball-pk10.pk03 {
+  background: #3a3939;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk4,
+.betting-content .top-betting-result .result .result-ball-pk10.pk04 {
+  background: #ff7301;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk5,
+.betting-content .top-betting-result .result .result-ball-pk10.pk05 {
+  background: #5cdede;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk6,
+.betting-content .top-betting-result .result .result-ball-pk10.pk06 {
+  background: #5000f8;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk7,
+.betting-content .top-betting-result .result .result-ball-pk10.pk07 {
+  background: #a5a5a5;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk8,
+.betting-content .top-betting-result .result .result-ball-pk10.pk08 {
+  background: #ff0000;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk9,
+.betting-content .top-betting-result .result .result-ball-pk10.pk09 {
+  background: #760000;
+}
+.betting-content .top-betting-result .result .result-ball-pk10.pk10 {
+  background: #27c100;
+}
+.betting-content .top-betting-result .result .sc-result {
+  color: #333333;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 2px;
+  border: 1px solid #c8c7cc;
+  background: rgba(0, 0, 0, 0.1);
+}
+.betting-content .top-betting-result .result .result-text-ssc {
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+}
+.betting-content .top-betting-result .result .result-lhc-01,
+.betting-content .top-betting-result .result .result-lhc-1,
+.betting-content .top-betting-result .result .result-lhc-02,
+.betting-content .top-betting-result .result .result-lhc-2,
+.betting-content .top-betting-result .result .result-lhc-07,
+.betting-content .top-betting-result .result .result-lhc-7,
+.betting-content .top-betting-result .result .result-lhc-08,
+.betting-content .top-betting-result .result .result-lhc-8,
+.betting-content .top-betting-result .result .result-lhc-12,
+.betting-content .top-betting-result .result .result-lhc-13,
+.betting-content .top-betting-result .result .result-lhc-18,
+.betting-content .top-betting-result .result .result-lhc-19,
+.betting-content .top-betting-result .result .result-lhc-23,
+.betting-content .top-betting-result .result .result-lhc-24,
+.betting-content .top-betting-result .result .result-lhc-29,
+.betting-content .top-betting-result .result .result-lhc-30,
+.betting-content .top-betting-result .result .result-lhc-34,
+.betting-content .top-betting-result .result .result-lhc-35,
+.betting-content .top-betting-result .result .result-lhc-40,
+.betting-content .top-betting-result .result .result-lhc-45,
+.betting-content .top-betting-result .result .result-lhc-46 {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  background: url("../images/lhc-ball-red.png") no-repeat;
+  background-size: 100% 100%;
+}
+.betting-content .top-betting-result .result .result-lhc-05,
+.betting-content .top-betting-result .result .result-lhc-5,
+.betting-content .top-betting-result .result .result-lhc-06,
+.betting-content .top-betting-result .result .result-lhc-6,
+.betting-content .top-betting-result .result .result-lhc-11,
+.betting-content .top-betting-result .result .result-lhc-16,
+.betting-content .top-betting-result .result .result-lhc-17,
+.betting-content .top-betting-result .result .result-lhc-21,
+.betting-content .top-betting-result .result .result-lhc-22,
+.betting-content .top-betting-result .result .result-lhc-27,
+.betting-content .top-betting-result .result .result-lhc-28,
+.betting-content .top-betting-result .result .result-lhc-32,
+.betting-content .top-betting-result .result .result-lhc-33,
+.betting-content .top-betting-result .result .result-lhc-38,
+.betting-content .top-betting-result .result .result-lhc-39,
+.betting-content .top-betting-result .result .result-lhc-43,
+.betting-content .top-betting-result .result .result-lhc-44,
+.betting-content .top-betting-result .result .result-lhc-49 {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  background: url("../images/lhc-ball-green.png") no-repeat;
+  background-size: 100% 100%;
+}
+.betting-content .top-betting-result .result .result-lhc-03,
+.betting-content .top-betting-result .result .result-lhc-3,
+.betting-content .top-betting-result .result .result-lhc-04,
+.betting-content .top-betting-result .result .result-lhc-4,
+.betting-content .top-betting-result .result .result-lhc-09,
+.betting-content .top-betting-result .result .result-lhc-9,
+.betting-content .top-betting-result .result .result-lhc-10,
+.betting-content .top-betting-result .result .result-lhc-14,
+.betting-content .top-betting-result .result .result-lhc-15,
+.betting-content .top-betting-result .result .result-lhc-20,
+.betting-content .top-betting-result .result .result-lhc-25,
+.betting-content .top-betting-result .result .result-lhc-26,
+.betting-content .top-betting-result .result .result-lhc-31,
+.betting-content .top-betting-result .result .result-lhc-36,
+.betting-content .top-betting-result .result .result-lhc-37,
+.betting-content .top-betting-result .result .result-lhc-41,
+.betting-content .top-betting-result .result .result-lhc-42,
+.betting-content .top-betting-result .result .result-lhc-47,
+.betting-content .top-betting-result .result .result-lhc-48 {
+  color: #ffffff;
+  font-size: 12px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+  background: url("../images/lhc-ball-blue.png") no-repeat;
+  background-size: 100% 100%;
+}
+.betting-content .top-betting-result .result .lhc-span {
+  font-size: 12px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  font-weight: bold;
+  line-height: 18px;
+  text-align: center;
+}
+.betting-content .nn-result {
+  width: 100%;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.betting-content .nn-result span {
+  width: 30%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  border: 1px solid #c8c7cc;
+  text-align: center;
+  display: inline-block;
+  border-radius: 3px;
+  margin: 5px 1% 0 1%;
+  background: rgba(0, 0, 0, 0.1);
+}
+.betting-content .nn-result span.active {
+  border-color: #D7213b;
+}
+.betting-content .fe-time {
+  padding: 4px;
+  border-top: 1px solid #c8c7cc;
+  font-size: 14px;
+}
+.betting-content .fe-time > div {
+  margin-left: 10px;
+}
+.betting-content .fe-time > div:first-child {
+  margin-left: 0;
+}
+.betting-content .fe-time > div span {
+  display: inline-block;
+  width: 65px;
+  line-height: 20px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+.betting-content .bottom-betting-content {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  border-top: 1px solid #c8c7cc;
+}
+.betting-content .bottom-betting-content .personal-message {
+  font-size: 12px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+}
+.betting-content .bottom-betting-content .personal-message > div:first-child {
+  border-right: 1px solid #c8c7cc;
+}
+.betting-content .bottom-betting-content .user-set-content {
+  width: 100%;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  position: relative;
+}
+.betting-content .bottom-betting-content .user-set-content .money-entry {
+  width: 80%;
+  height: 30px;
+  margin: 10px 0 10px 0;
+  font-size: 14px;
+}
+.betting-content .bottom-betting-content .user-set-content button {
+  width: 40%;
+  font-size: 14px;
+  margin: 10px 0 10px 0;
+  height: 30px;
+  padding: 0;
+  line-height: 30px;
+}
+.betting-content .bottom-betting-content .user-set-content button.money-btn {
+  width: 95%;
+}
+.betting-content .bottom-betting-content .user-set-content .chouma {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 40px;
+  top: -40px;
+  background: rgba(0, 0, 0, 0.3);
+}
+.betting-content .bottom-betting-content .user-set-content .chouma button {
+  width: 18%;
+}
+.betting-content .bottom-betting-content .user-set-content .fpdialog {
+  position: absolute;
+  height: 50px;
+  line-height: 50px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  text-align: center;
+  vertical-align: middle;
+}
+.betting-content .betting-type {
+  background: #f1f1f1;
+}
+.betting-content .betting-type .mui-segmented-control .mui-control-item {
+  width: 100%;
+  line-height: 40px;
+  background: #dddddd;
+}
+.betting-content .betting-area {
+  border-left: 1px solid #c8c7cc;
+  background: #ffffff;
+  font-size: 14px;
+  overflow: auto;
+  position: relative;
+}
+.betting-content .betting-area .type-title {
+  line-height: 30px;
+}
+.betting-content .betting-area .type-tab {
+  line-height: 40px;
+  border-right: 1px solid #c8c7cc;
+}
+.betting-content .betting-area .type-tab.active {
+  background: rgba(0, 0, 0, 0.5);
+  color: #FFFFFF;
+}
+.betting-content .betting-area .type-c {
+  line-height: 40px;
+  border-right: 1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
+  bottom: -1px;
+}
+.betting-content .betting-area .type-c .on {
+  background: #D7213b;
+  color: #ffffff;
+}
+.betting-content .betting-area .type-c .on .zihong {
+  color: #ffffff;
+}
+.betting-content .betting-area .type-c .ssc-ball {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  background: #666666;
+  border-radius: 20px;
+  color: #ffffff;
+}
+.betting-content .betting-area .type-c .pk10-ball {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #ffffff;
+}
+.betting-content .betting-area .type-c .pk10-ball1 {
+  background: #e0e02b;
+}
+.betting-content .betting-area .type-c .pk10-ball2 {
+  background: #0289ff;
+}
+.betting-content .betting-area .type-c .pk10-ball3 {
+  background: #3a3939;
+}
+.betting-content .betting-area .type-c .pk10-ball4 {
+  background: #ff7301;
+}
+.betting-content .betting-area .type-c .pk10-ball5 {
+  background: #5cdede;
+}
+.betting-content .betting-area .type-c .pk10-ball6 {
+  background: #5000f8;
+}
+.betting-content .betting-area .type-c .pk10-ball7 {
+  background: #a5a5a5;
+}
+.betting-content .betting-area .type-c .pk10-ball8 {
+  background: #ff0000;
+}
+.betting-content .betting-area .type-c .pk10-ball9 {
+  background: #760000;
+}
+.betting-content .betting-area .type-c .pk10-ball10 {
+  background: #27c100;
+}
+.betting-content .betting-area .type-c .red-ball {
+  color: #ffffff;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-left: 3px;
+  line-height: 25px;
+  font-weight: bold;
+  background: url("../images/lhc-ball-red.png") no-repeat;
+  background-size: 100% 100%;
+}
+.betting-content .betting-area .type-c .blue-ball {
+  color: #ffffff;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-left: 3px;
+  line-height: 25px;
+  font-weight: bold;
+  background: url("../images/lhc-ball-blue.png") no-repeat;
+  background-size: 100% 100%;
+}
+.betting-content .betting-area .type-c .green-ball {
+  color: #ffffff;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-left: 3px;
+  line-height: 25px;
+  font-weight: bold;
+  background: url("../images/lhc-ball-green.png") no-repeat;
+  background-size: 100% 100%;
+}
+.betting-content .betting-area .type-c .line {
+  padding: 0 15px;
+}
+.betting-content .betting-area .bb {
+  border-bottom: 1px solid #c8c7cc;
+}
+.betting-content .mui-fullscreen {
+  top: 81px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #c8c7cc;
+}
+.betting-content .mui-fullscreen.nn-fullscreen {
+  top: 135px;
+}
+.betting-content .mui-fullscreen .betfkdialog {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 25%;
+  right: 0;
+}
+.betting-content .mui-row.mui-fullscreen > [class*="mui-col-"] {
+  height: 100%;
+}
+.betting-content .mui-col-xs-3,
+.betting-content .mui-control-content {
+  overflow-y: auto;
+  height: 100%;
+}
+.betting-content .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+  background-color: #fff;
+  color: #D7213b;
+  position: relative;
+}
+.betting-content .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 40px;
+  left: 0;
+  top: 0;
+  background: #D7213b;
+}
+.dialog {
+  position: fixed;
+  z-index: 100000;
+  top: -50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.dialog .betting-dialog {
+  width: 95vw;
+  height: 60vh;
+  margin: 20vh auto;
+  background: #FFFFFF;
+  border-radius: 10px;
+  position: relative;
+}
+.dialog .betting-dialog .top {
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #c8c7cc;
+}
+.dialog .betting-dialog .middle {
+  position: absolute;
+  width: 100%;
+  top: 40px;
+  bottom: 80px;
+  overflow-y: auto;
+  padding: 10px 20px;
+}
+.dialog .betting-dialog .middle .betting-list {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  border-bottom: 1px solid #c8c7cc;
+}
+.dialog .betting-dialog .bottom {
+  border-top: 1px solid #c8c7cc;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  padding: 0 20px;
+}
+.dialog .betting-dialog .bottom .tongji {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+}
+.dialog .betting-dialog .bottom .tongji span {
+  color: #D7213b;
+}
+.dialog .betting-dialog .bottom .button {
+  width: 100%;
+  height: 45px;
+  text-align: center;
+}
+.dialog .betting-dialog .bottom .button button {
+  width: 40%;
+  height: 35px;
+}
+.result-box .k3ball {
+  margin-left: 5px;
+}
+.result-box .k3ball1 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball1.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result-box .k3ball2 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball2.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result-box .k3ball3 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball3.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result-box .k3ball4 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball4.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result-box .k3ball5 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball5.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result-box .k3ball6 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball6.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result-box .niu-cont {
+  display: inline-block;
+  background: #f0f0f0;
+  border: 1px solid #f0f0f0;
+}
+.result .result-ball-k1 {
+  font-size: 0px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  background: url(../images/k3ball1.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result .result-ball-k2 {
+  font-size: 0px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  background: url(../images/k3ball2.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result .result-ball-k3 {
+  font-size: 0px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  background: url(../images/k3ball3.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result .result-ball-k4 {
+  font-size: 0px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  background: url(../images/k3ball4.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result .result-ball-k5 {
+  font-size: 0px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  background: url(../images/k3ball5.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.result .result-ball-k6 {
+  font-size: 0px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  background: url(../images/k3ball6.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.type-c .k3ball {
+  margin-left: 5px;
+}
+.type-c .k3ball1 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball1.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.type-c .k3ball2 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball2.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.type-c .k3ball3 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball3.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.type-c .k3ball4 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball4.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.type-c .k3ball5 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball5.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.type-c .k3ball6 {
+  font-size: 0px;
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  vertical-align: middle;
+  background: url(../images/k3ball6.png) no-repeat;
+  background-size: cover;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+}
+.list-two-title {
+  background-color: #e0e0e0;
+}

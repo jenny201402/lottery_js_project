@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../less/base.css">
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link href="../less/open.lottery.css" rel="stylesheet">
+</head>
+<body ms-controller="open.list.detail.list" style="background: #FFFFFF">
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper open-table">
+    <div class="mui-scroll">
+        <table border="1" class="table-view list" style="margin-top: -1px;">
+            <tr ms-repeat="resultList">
+                <td class="qh mui-text-center">
+                    {{el.turnNum}}
+                    <div>
+                        {{el.openTime|date("MM-dd")}}
+                        {{el.openTime|date("HH:mm")}}
+                    </div>
+                </td>
+                <!--秒速飞艇，秒速赛车，北京赛车，跑马-->
+                <td ms-if="el.gameId == 82 || el.gameId == 80 || el.gameId == 50 || el.gameId == 99" class="kj result-box">
+                    <span ms-repeat-item="el.openNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                    <div><span ms-repeat="scSm(el.openNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                </td>
+                <!--重庆时时彩，秒速时时彩-->
+                <td ms-if="el.gameId == 81 || el.gameId == 1" class="kj result-box">
+                    <span ms-repeat-item="el.openNum.split(',')" class="ball-ssc">{{item}}</span>
+                    <div><span ms-repeat="sscSm(el.openNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                </td>
+                <!--PC蛋蛋-->
+                <td ms-if="el.gameId == 66" class="kj result-box">
+                    <span ms-repeat-item="el.openNum.split(',')" class="ball-dd">{{item}}</span>
+                    <span class="ball-dd no-ball">=</span>
+                    <span class="ball-dd">{{addValue(el.openNum.split(','))}}</span>
+                    <div><span ms-repeat="ddSm(el.openNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                </td>
+                <!--北京快乐8-->
+                <td ms-if="el.gameId == 65" class="kj result-box">
+                    <div class="mui-pull-left">
+                        <div class="top-content">
+                            <span ms-repeat-item="el.openNum.split(',').splice(0,10)" class="ball-kl8">{{item}}</span>
+                        </div>
+                        <div class="bottom-content">
+                            <span ms-repeat-item="el.openNum.split(',').splice(10)" class="ball-kl8">{{item}}</span>
+                        </div>
+                    </div>
+                </td>
+                <!--pk10牛牛，秒速牛牛-->
+                <td ms-if="el.gameId == 91 || el.gameId == 90" class="result-box">
+                    <div class="mui-pull-left">
+                        <span ms-repeat-item="el.openNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                        <div class="top-content">
+                            <span class="ball-nn">庄</span>
+                            <span class="ball-nn">闲一</span>
+                            <span class="ball-nn">闲二</span>
+                            <span class="ball-nn">闲三</span>
+                            <span class="ball-nn">闲四</span>
+                            <span class="ball-nn">闲五</span>
+                        </div>
+                        <div class="bottom-content">
+                            <span class="ball-nn-re">{{getNn(el.n11)}}</span>
+                            <span class="ball-nn-re">{{getNn(el.n12)}}</span>
+                            <span class="ball-nn-re">{{getNn(el.n13)}}</span>
+                            <span class="ball-nn-re">{{getNn(el.n14)}}</span>
+                            <span class="ball-nn-re">{{getNn(el.n15)}}</span>
+                            <span class="ball-nn-re">{{getNn(el.n16)}}</span>
+                        </div>
+                    </div>
+                </td>
+                <!--六合彩-->
+                <td ms-if="el.gameId == 70 || el.gameId == 85" class="kj result-box">
+                    <span ms-repeat-item="el.openNum.split(',').slice(0,6)" ms-class="result-lhc-{{item}}">{{item}}</span><span class="lhc-span">+</span><span ms-repeat-item="el.openNum.split(',').slice(6)" ms-class="result-lhc-{{item}}">{{item}}</span>
+                    <div style="margin-top: 5px"><span class="sc-sm ball-sc">{{el.n1_sx}}</span><span class="sc-sm ball-sc">{{el.n2_sx}}</span><span class="sc-sm ball-sc">{{el.n3_sx}}</span><span class="sc-sm ball-sc">{{el.n4_sx}}</span><span class="sc-sm ball-sc">{{el.n5_sx}}</span><span class="sc-sm ball-sc">{{el.n6_sx}}</span><span class="lhc-span"></span><span class="sc-sm ball-sc">{{el.n7_sx}}</span></div>
+                </td>
+                <!--快3-->
+                <td ms-if="el.gameId == 10 || el.gameId == 11 || el.gameId == 12 || el.gameId == 13" class="kj result-box">
+                    <span ms-repeat-item="el.openNum.split(',')" class="k3ball" ms-class="k3ball{{item}}">{{item}}</span>
+                    <div><span ms-repeat="k3Sm(el.openNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                </td>
+               </tr>
+        </table>
+    </div>
+</div>
+<script src="../js/vendor/mui.js"></script>
+<script src="../js/vendor/avalon.modern.shim.js"></script>
+<script src="../js/vendor/jquery.min.js"></script>
+<script src="../js/xhrConfig.js"></script>
+<script src="../js/actions.js"></script>
+<script src="open.list.detail.list.js"></script>
+</body>
+</html>

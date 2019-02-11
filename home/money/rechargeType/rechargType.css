@@ -1,0 +1,60 @@
+body {
+  background: #ffffff;
+}
+body .mui-content {
+  background: #ffffff;
+}
+.mt8 {
+  margin-top: 8px;
+}
+.mt10 {
+  margin-top: 10px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+.recharge-module {
+  width: 80%;
+  margin: 30px auto;
+}
+.recharge-module .text {
+  font-size: 14px;
+}
+.recharge-module input {
+  font-size: 14px;
+  margin-bottom: 0;
+  border: 1px solid #c8c7cc!important;
+}
+.recharge-module .alert {
+  font-size: 14px;
+  color: red;
+  margin-top: 5px;
+}
+.recharge-module .card-message {
+  border: 1px solid #c8c7cc;
+  border-radius: 4px;
+  font-size: 14px;
+  padding: 15px 8px;
+  background: rgba(0, 0, 0, 0.1);
+}
+.recharge-module .card-message .title {
+  height: 40px;
+  line-height: 40px;
+  margin-top: -15px;
+  border-bottom: 1px solid #c8c7cc ;
+}
+.recharge-module select {
+  border: 1px solid #c8c7cc!important;
+  margin: 10px 0;
+  height: 40px;
+  line-height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.recharge-module .offline-pay-tip {
+  width: 100%;
+  padding: 5px;
+  font-size: 12px;
+  background: #ef6c74;
+  color: #fffdff;
+}

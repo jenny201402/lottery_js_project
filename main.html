@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+</head>
+<body>
+    <div style="width:100vw;height: 100vh;background:url('images/index-loading.jpg') no-repeat;background-size: cover"></div>
+    <script src="js/vendor/mui.js"></script>
+    <script src="js/vendor/avalon.modern.shim.js"></script>
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="js/xhrConfig.js"></script>
+    <script src="js/actions.js"></script>
+	<script>
+       /* var wgtWaiting = null;
+        function downWgt() {
+            wgtWaiting = plus.nativeUI.showWaiting("开始下载");
+            var wgtUrl = "http://git.dohub.cn/luke94nb/mobile/blob/master/1.1.0.wgt";
+            var wgtOption = { filename: "_doc/update/", retry: 1 };
+            var task =
+                    plus.downloader.createDownload(wgtUrl, wgtOption, function (download, status) {
+                        if (status == 200) {
+                            wgtWaiting.setTitle("开始安装");
+                            installWgt(download.filename);
+                        } else {
+                            mui.alert("应用升级失败！");
+                            wgtWaiting.close();
+                        }
+                    });
+
+            task.addEventListener("statechanged", function (download, status) {
+                switch (download.state) {
+                    case 2:
+                        wgtWaiting.setTitle("已连接到服务器");
+                        break;
+                    case 3:
+                        var percent = download.downloadedSize / download.totalSize * 100;
+                        wgtWaiting.setTitle("已下载 " + parseInt(percent) + "%");
+                        break;
+                    case 4:
+                        wgtWaiting.setTitle("下载完成");
+                        break;
+                }
+            });
+            task.start();
+        };
+
+        function installWgt(wgtpath) {
+            plus.runtime.install(wgtpath, {}, function (wgtinfo) {
+                wgtWaiting.close();
+                mui.alert("更新完成，须重启应用！", function () {
+                    plus.runtime.restart();
+                });
+            }, function (error) {
+                wgtWaiting.close();
+                mui.alert("应用更新失败！\n" + error.message);
+            });
+        };
+        plus.runtime.getProperty(plus.runtime.appid,function(inf){
+            var wgtVer = inf.version;
+            $.ajax({
+                type:"get",
+                url:"http://git.dohub.cn/luke94nb/mobile/raw/master/version.json",
+                dataType:"json",
+                success:function(data){
+                    if(compareVersion(wgtVer,data.version) === true ){
+                        downWgt()
+                    }
+                },
+                error:function(err){
+
+                }
+            });
+        });
+
+        function compareVersion( ov, nv ){
+            if ( !ov || !nv || ov=="" || nv=="" ){
+                return false;
+            }
+            var b=false,
+                    ova = ov.split(".",4),
+                    nva = nv.split(".",4);
+            for ( var i=0; i<ova.length&&i<nva.length; i++ ) {
+                var so=ova[i],no=parseInt(so),sn=nva[i],nn=parseInt(sn);
+                if ( nn>no || sn.length>so.length ) {
+                    return true;
+                } else if ( nn<no ) {
+                    return false;
+                }
+            }
+            if ( nva.length>ova.length && 0==nv.indexOf(ov) ) {
+                return true;
+            }
+        }*/
+        //判断网络状态
+        mui.plusReady(function() {
+
+            $.ajax({
+                type: 'get',
+                url: 'http://git.dohub.cn/luke94nb/mobile/raw/master/version.json',
+                success: function (a) {
+                    console.log(JSON.stringify(a))
+                }
+            })
+            // 阻止横屏
+            plus.screen.lockOrientation("portrait-primary")
+            //mui初始化
+            mui.init({
+                swipeBack: true, //启用右滑关闭功能
+                statusBarBackground: '#D7213b',
+                statusBarColor: '#ffffff',
+                popGesture: 'close',
+                keyEventBind: {
+                    // 关闭back按键监听
+                    backbutton: false
+                },
+                // 关闭窗口前回调方法
+                beforeback: function() {
+                    // 返回true，继续页面关闭逻辑
+                    return true
+                },
+                preloadPages:[
+                    //预加载
+                    {
+                        url:'index.html',
+                        id:'app.index',
+                        styles:{},//窗口参数
+                        extras:{},//自定义扩展参数
+                        subpages:[{},{}]//预加载页面的子页面
+                    }
+                ],
+                preloadLimit:5//预加载窗口数量限制(一旦超出,先进先出)默认不限制
+            })
+            var connectionStatus = plus.networkinfo.getCurrentType();
+            if(connectionStatus == 0 || connectionStatus == 1){
+                mui.toast('无法连接网络,请查看网络设置');
+            }else{
+                setTimeout(function () {
+                    plus.webview.getWebviewById('app.index').show()
+                },2000)
+            }
+        })
+	</script>
+</body>
+</html>

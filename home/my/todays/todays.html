@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../less/my.css">
+</head>
+<body ms-controller="my.todays">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">今日已结</h1>
+</header>
+<div class="mui-content">
+<div class="todays-content">
+    <table border="1" class="table-view list">
+        <tr>
+            <td class="bbt">
+                期号
+            </td>
+            <td class="bbt">下注明细</td>
+            <td class="bbt">下注金额</td>
+            <td class="bbt">输赢金额</td>
+        </tr>
+    </table>
+    <div ms-if="show" class="bottom-title">
+        <div class="mui-row">
+            <div class="mui-col-xs-6">
+                下注金额：<span class="red">{{info.totalBetMoney}}</span>
+            </div>
+            <div class="mui-col-xs-6 mui-text-right">
+                总输赢：
+                <span class="red">{{info.totalResultMoney}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="todays.js"></script>
+<script>
+    mui.init({
+        subpages:[{
+            url:'todayList.html',//下拉刷新内容页面地址
+            id:'today.list',//内容页面标志
+            styles:{
+                top:'77px',
+                bottom:'41px'
+            }
+        }]
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+.mui-content {
+  background: #ffffff;
+}
+.app-content .my-message {
+  padding: 20px 15px;
+  height: 120px;
+  background: #ffffff;
+}
+.app-content .my-message img {
+  width: 80px;
+  height: 80px;
+  border-radius: 80px;
+  display: inline-block;
+  float: left;
+}
+.app-content .my-message .messges-cont {
+  float: left;
+  margin-left: 10px;
+}
+.app-content .my-message .messges-cont .name {
+  height: 25px;
+  font-size: 16px;
+  line-height: 25px;
+}
+.app-content .my-message .messges-cont .money {
+  height: 25px;
+  font-size: 14px;
+  line-height: 25px;
+}
+.app-content .my-message .messges-cont .money .red {
+  color: red;
+}
+.app-content .my-message .messges-cont .money .refresh {
+  margin-left: 10px;
+}
+.app-content .my-message .messges-cont .red-bag {
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+}
+.app-content .my-message .messges-cont .red-bag a {
+  display: block;
+  color: red;
+}
+.app-content .my-message .messges-cont .red-bag a img {
+  float: left;
+  margin-top: 3px;
+  margin-left: 3px;
+  width: 20px;
+  height: 24px;
+  border-radius: 0;
+}
+.app-content .mui-content > .mui-table-view:first-child {
+  margin-top: 0!important;
+}
+.app-content .mui-grid-view.mui-grid-9 {
+  background: #ffffff;
+}
+.app-content .my-list-content .icon-img {
+  width: 40px;
+  height: 40px;
+}
+.personal-content .top {
+  background: #ffffff;
+  padding: 30px 20px;
+  height: 120px;
+  border-bottom: 1px solid #c8c7cc;
+}
+.personal-content .top img {
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+.personal-content .top .name,
+.personal-content .top .money {
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.personal-content .msg-list {
+  padding: 0 20px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 14px;
+  border-bottom: 1px solid #c8c7cc;
+}
+.personal-content .msg-list .right {
+  text-align: right;
+}
+.password-content {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px 15px;
+}
+.message-content .mui-table-view-cell {
+  border-bottom: 1px solid #c8c7cc;
+}
+.message-content .mui-table-view-cell:after {
+  height: 0;
+}
+.message-content .list {
+  height: 50px;
+}
+.message-content .list .top-title {
+  height: 30px;
+  line-height: 30px;
+  font-size: 16px;
+  color: #333333;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.message-content .list .bottom-time {
+  height: 20px;
+  font-size: 14px;
+  color: #6d6d72;
+}
+.bankcard-content {
+  color: #333333;
+}
+.bankcard-content .card-box {
+  width: 95%;
+  height: 160px;
+  margin: 20px auto;
+  border: 1px solid #c8c7cc;
+  border-radius: 10px;
+}
+.bankcard-content .card-box .bank-logo {
+  padding: 10px 0;
+  border-bottom: 1px solid #c8c7cc;
+  position: relative;
+}
+.bankcard-content .card-box .bank-logo .update-btn {
+  position: absolute;
+  right: 10px;
+  top: 16px;
+  color: #333333;
+}
+.bankcard-content .card-box .bank-logo .update-btn span {
+  font-size: 30px;
+}
+.bankcard-content .card-box .bank-logo img {
+  width: 150px;
+  height: 37px;
+}
+.bankcard-content .card-box .bank-message div {
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+  padding-left: 5px;
+}
+.bankcard-content .card-box .bank-message div span {
+  margin-left: 30px;
+}
+.bankcard-content .card-box .bank-message div:first-child {
+  margin-top: 10px;
+}
+.bankcard-content .add-card-btn {
+  width: 95%;
+  height: 90px;
+  margin: 20px auto;
+  border: 1px solid #c8c7cc;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 90px;
+  background: rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+}
+.bankcard-content .update-box {
+  width: 80%;
+  margin: 20px auto;
+}
+.bankcard-content .update-box select {
+  border: 1px solid #c8c7cc !important;
+}
+.bankcard-content .update-box input {
+  font-size: 14px;
+}
+.bankcard-content .update-box .open-name {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.todays-content {
+  font-size: 12px;
+  position: relative;
+}
+.todays-content .bottom-title {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #c8c7cc;
+  padding: 0 15px;
+}
+.todays-content .bottom-title span {
+  color: red;
+}
+.todays-content .list {
+  height: 33px;
+}
+.todays-content .list td {
+  padding: 0!important;
+}
+.todays-content .table-view {
+  width: 100%;
+  border: 1px solid #c8c7cc;
+  text-align: center;
+  background: #ffffff;
+}
+.todays-content .table-view td {
+  width: 25%;
+  padding: 8px;
+}
+.todays-content .table-view td.bbt {
+  border-bottom: 1px solid #c8c7cc;
+}
+.betting-content {
+  font-size: 12px;
+  position: relative;
+}
+.betting-content .bottom-title {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  border-top: 1px solid #c8c7cc;
+  padding: 0 15px;
+}
+.betting-content .list {
+  height: 33px;
+}
+.betting-content .list td {
+  padding: 0!important;
+}
+.betting-content .table-view {
+  width: 99%;
+  border-color: #c8c7cc;
+  text-align: center;
+  background: #ffffff;
+}
+.betting-content .table-view td {
+  width: 33.33%;
+  padding: 10px;
+}
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 12px;
+}
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+}
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 12px;
+}
+input:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 12px;
+}
+.message-dialog {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  color: #333333;
+}
+.message-dialog .title {
+  font-size: 20px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  border-bottom: 1px solid #ccc;
+}
+.message-dialog .content {
+  width: 100%;
+  height: 220px;
+  padding: 15px;
+  font-size: 14px;
+}
+.message-dialog .button {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  bottom: 0;
+  padding: 0 15px;
+  font-size: 0;
+}
+.message-dialog .button button {
+  width: 45%;
+  height: 40px;
+}
+.message-dialog .button button:last-child {
+  margin-left: 10%;
+}

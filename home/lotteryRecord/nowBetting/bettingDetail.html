@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="nowBetting.css">
+</head>
+<body ms-controller="record.nowBetting.detail">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">即时注单</h1>
+</header>
+<div class="mui-content">
+    <div class="lottery-name">
+        下注明细 > {{lotteryName}}
+    </div>
+    <div ms-if="show" class="table-content">
+        <table border="1" class="table-view detail">
+            <tr class="head">
+                <td>期号</td>
+                <td>下注明细</td>
+                <td>下注金额</td>
+                <td>可赢金额</td>
+            </tr>
+            <tr ms-repeat="list">
+                <td>{{el.turnNum}}</td>
+                <td>
+                    <div>{{playCates[el.playCateId].name}}-{{plays[el.playId].name}}</div>
+                    <div>@{{el.odds}}</div>
+                </td>
+                <td>{{el.money|currency}}</td>
+                <td>{{el.winMoney|currency}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="foot">
+    总下注金额： <span class="green">{{info.totalBetMoney|currency}}</span>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="https://fh888.f8710.com/static/gamedatas.js"></script>
+<script src="bettingDetail.js"></script>
+</body>
+</html>

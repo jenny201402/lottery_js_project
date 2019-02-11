@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <!--App自定义的css-->
+    <link href="../less/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="../less/money.css">
+    <link rel="stylesheet" href="../less/base.css">
+</head>
+
+<body ms-controller="money.home">
+<div class="mui-content money-content">
+    <ul class="mui-table-view">
+        <li class="mui-table-view-cell mui-media">
+            <img class="mui-media-object mui-pull-left" src="../images/userJ.jpeg">
+            <div class="mui-media-body">
+                <span class="username">{{username}}</span>
+                <p class='mui-ellipsis'>用户余额：<span class="user-money">{{userMoney}}&nbspRMB</span><span ms-on-tap="refresh" class="refresh mui-icon mui-icon-refresh"></span></p>
+            </div>
+        </li>
+    </ul>
+    <div id="slider" class="mui-slider mui-fullscreen" style="top: 74px">
+        <div id="sliderSegmentedControl" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+            <div class="mui-scroll">
+                <a id="ck" class="mui-control-item mui-active" href="#item1mobile" data-wid="tab-top-subpage-1.html">
+                    存款
+                </a>
+                <a id="qk" class="mui-control-item" href="#item2mobile" data-wid="tab-top-subpage-2.html">
+                    取款
+                </a>
+                <a id="ckjl" class="mui-control-item" href="#item3mobile" data-wid="tab-top-subpage-3.html">
+                    存款记录
+                </a>
+                <a id="qkjl" class="mui-control-item" href="#item4mobile" data-wid="tab-top-subpage-4.html">
+                    取款记录
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/vendor/mui.js"></script>
+<script src="../js/vendor/webviewGroup.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/vendor/mui.js"></script>
+<script src="../js/vendor/avalon.modern.shim.js"></script>
+<script src="../js/vendor/jquery.min.js"></script>
+<script src="../js/xhrConfig.js"></script>
+<script src="../js/actions.js"></script>
+<script src="../js/src/home/money.home.js"></script>
+<script>
+    mui.init()
+
+    mui.plusReady(function() {
+        var _self = plus.webview.currentWebview()
+        var group = new webviewGroup(_self.id, {
+            items: [{
+                id: "tab-top-subpage-1.html",
+                url: "money/money-ck.html",
+                extras: {}
+            }, {
+                id: "tab-top-subpage-2.html",
+                url: "money/money-qk.html",
+                extras: {}
+            }, {
+                id: "tab-top-subpage-3.html",
+                url: "money/money-ckjl.html",
+                extras: {}
+            }, {
+                id: "tab-top-subpage-4.html",
+                url: "money/money-qkjl.html",
+                extras: {}
+            }],
+            onChange: function(obj) {
+                if(obj.index == '0'){
+                    mui.fire(plus.webview.getWebviewById('money-ckType'),'update.handler')
+                }
+                if(obj.index == '1'){
+                    mui.fire(plus.webview.getWebviewById('tab-top-subpage-2.html'),'update.handler')
+                }
+                if(obj.index == '2'){
+                    //
+                }
+                if(obj.index == '3'){
+                    //
+                }
+                var c = document.querySelector(".mui-control-item.mui-active")
+                if(c) {
+                    c.classList.remove("mui-active")
+                }
+                var target = document.querySelector(".mui-scroll .mui-control-item:nth-child(" + (parseInt(obj.index) + 1) + ")")
+                target.classList.add("mui-active")
+                if(target.scrollIntoView) {
+                    target.scrollIntoView()
+                }
+            }
+        })
+        mui(".mui-scroll").on("tap", ".mui-control-item", function(e) {
+            var wid = this.getAttribute("data-wid")
+            group.switchTab(wid)
+        })
+
+        //监听啊
+        var ck = document.getElementById("ck")
+        var qk = document.getElementById("qk")
+        var ckjl = document.getElementById("ckjl")
+        var qkjl = document.getElementById("qkjl")
+        window.addEventListener('go.qk', function () {
+            mui.trigger(qk,'tap')
+        })
+        window.addEventListener('go.ckList', function () {
+            mui.trigger(ckjl,'tap')
+            mui.fire(plus.webview.getWebviewById('money.ckjl.list'),'update.handler')
+        })
+        window.addEventListener('go.qk', function () {
+            mui.trigger(qk,'tap')
+        })
+        window.addEventListener('go.qkList', function () {
+            mui.trigger(qkjl,'tap')
+            mui.fire(plus.webview.getWebviewById('money.qkjl.list'),'update.handler')
+        })
+    })
+</script>
+
+</body>
+
+</html>

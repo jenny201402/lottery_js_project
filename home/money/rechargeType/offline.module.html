@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="rechargType.css">
+</head>
+<body ms-controller="offline.module">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">{{title}}</h1>
+</header>
+<div class="mui-content">
+    <div class="recharge-module">
+        <div ms-if="!showDetail">
+            <!--银行卡转账-->
+            <div ms-if="nowList.rechType == 'bankTransfer'">
+                <input class="mt8" ms-duplex="writeNum" type="text" placeholder="请输入存款金额">
+                <div class="alert">单笔下限{{nowList.min_money}}，上限{{nowList.max_money}}</div>
+                <input class="mt8" ms-duplex="username" type="text"  ms-attr-placeholder="nowList.pageDesc">
+            </div>
+            <!--支付宝转账-->
+            <div ms-if="nowList.rechType == 'alipay'">
+                <input class="mt8" ms-duplex="writeNum" type="text" placeholder="请输入存款金额">
+                <div class="alert">单笔下限{{nowList.min_money}}，上限{{nowList.max_money}}</div>
+                <input class="mt8" ms-duplex="payeeInfo" type="text" placeholder="请输入支付宝昵称">
+                <input class="mt8" ms-duplex="realName" type="text" placeholder="请输入支付宝实名认证">
+            </div>
+            <!--微信转账-->
+            <div ms-if="nowList.rechType == 'weixin'">
+                <input class="mt8" ms-duplex="writeNum" type="text" placeholder="请输入存款金额">
+                <div class="alert">单笔下限{{nowList.min_money}}，上限{{nowList.max_money}}</div>
+                <input class="mt8" ms-duplex="realName" type="text" ms-attr-placeholder="nowList.pageDesc">
+            </div>
+            <!--财付通转账-->
+            <div ms-if="nowList.rechType == 'cft'">
+                <input class="mt8" ms-duplex="writeNum" type="text" placeholder="请输入存款金额">
+                <div class="alert">单笔下限{{nowList.min_money}}，上限{{nowList.max_money}}</div>
+                <input class="mt8" ms-duplex="realName" type="text" ms-attr-placeholder="nowList.pageDesc">
+            </div>
+            <input class="mt10" type="text" readonly ms-attr-value="rechTime">
+            <div class="mt20">
+                <button type="button" ms-on-tap="next" data-loading-text="提交中" class="mui-btn next-pre-btn">下一步</button>
+            </div>
+        </div>
+        <!--详情-->
+        <div ms-if="showDetail">
+            <div class="offline-pay-tip"><span class="mui-icon mui-icon-info"></span>为了加快入款速度，请务必于转账后在提交资料！</div>
+            <!--银行卡转账-->
+            <div ms-if="nowList.rechType == 'bankTransfer'">
+                <div class="mt8 card-message">
+                    <div class="title">存款信息</div>
+                    <div>存款金额：{{writeNum}}</div>
+                    <div>用户姓名：{{username}}</div>
+                    <div>存款时间：{{rechTime}}</div>
+                    <div>存款方式：{{nowList.rechName}}</div>
+                </div>
+                <div class="mt8 card-message">
+                    <div class="title">银行信息</div>
+                    <div>开户银行：{{nowList.rechName}}</div>
+                    <div>开户网点：{{nowList.remark}}</div>
+                    <div>开户姓名：{{nowList.payeeName}}</div>
+                    <div>银行账号：{{nowList.payee}}</div>
+                </div>
+            </div>
+            <!--支付宝转账-->
+            <div ms-if="nowList.rechType == 'alipay'">
+                <div class="mt8 card-message">
+                    <div class="title">存款信息</div>
+                    <div>存款金额：{{writeNum}}</div>
+                    <div>账户信息：{{payeeInfo}}</div>
+                    <div>存款时间：{{rechTime}}</div>
+                    <div>认证姓名： {{realName}}</div>
+                    <div>存款方式：{{nowList.rechName}}</div>
+                </div>
+                <div class="mt8 card-message">
+                    <div class="title">支付宝账户信息</div>
+                    <div>姓名：{{nowList.payeeName}}</div>
+                    <div>账号：{{nowList.payee}}</div>
+                </div>
+            </div>
+            <!--微信转账-->
+            <div ms-if="nowList.rechType == 'weixin'">
+                <div class="mt8 card-message">
+                    <div class="title">存款信息</div>
+                    <div>存款金额：{{writeNum}}</div>
+                    <div>用户昵称：{{realName}}</div>
+                    <div>存款时间：{{rechTime}}</div>
+                    <div>存款方式：{{nowList.rechName}}</div>
+                </div>
+                <div class="mt8 card-message">
+                    <div class="title">微信账户信息</div>
+                    <div>姓名：{{nowList.payeeName}}</div>
+                    <div>账号：{{nowList.payee}}</div>
+                </div>
+            </div>
+            <!--财付通转账-->
+            <div ms-if="nowList.rechType == 'cft'">
+                <div class="mt8 card-message">
+                    <div class="title">存款信息</div>
+                    <div>存款金额：{{writeNum}}</div>
+                    <div>用户昵称：{{realName}}</div>
+                    <div>存款时间：{{rechTime}}</div>
+                    <div>存款方式：{{nowList.rechName}}</div>
+                </div>
+                <div class="mt8 card-message">
+                    <div class="title">微信账户信息</div>
+                    <div>姓名：{{nowList.payeeName}}</div>
+                    <div>账号：{{nowList.payee}}</div>
+                </div>
+            </div>
+            <div class="mt20">
+                <button type="button" ms-on-tap="sureSubmit(this)" data-loading-text="提交中" class="mui-btn next-pre-btn">提交申请</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/extends.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="offline.module.js"></script>
+</body>
+</html>

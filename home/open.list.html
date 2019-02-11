@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link href="../less/base.css" rel="stylesheet">
+    <link href="../less/open.lottery.css" rel="stylesheet">
+</head>
+<body ms-controller="open.list">
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div ms-if="showView" class="mui-scroll open-result-content">
+        <ul class="mui-table-view mui-table-view-chevron">
+            <!--秒速赛车-->
+            <li class="mui-table-view-cell" ms-repeat="openResults" data-repeat-rendered="rendered">
+                <a ms-on-tap="openDetail(showName(el.lotteryId),el.lotteryId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">{{showName(el.lotteryId)}}</span>
+                        <span class="nper">第{{el.preIssue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div ms-if="el.lotteryId == 80" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="scSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <div ms-if="el.lotteryId == 50" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="scSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <div ms-if="el.lotteryId == 82" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="scSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <div ms-if="el.lotteryId == 81" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" class="ball-ssc">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="sscSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <div ms-if="el.lotteryId == 1" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" class="ball-ssc">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="sscSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <div ms-if="el.lotteryId == 66" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" class="ball-dd">{{item}}</span>
+                        <span class="ball-dd no-ball">=</span>
+                        <span class="ball-dd">{{addValue(el.preNum.split(','))}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="ddSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <div ms-if="el.lotteryId == 65" class="result-box">
+                        <div class="mui-pull-left">
+                            <div class="top-content">
+                                <span ms-repeat-item="el.preNum.split(',').splice(0,10)" class="ball-kl8">{{item}}</span>
+                            </div>
+                            <div class="bottom-content">
+                                <span ms-repeat-item="el.preNum.split(',').splice(10)" class="ball-kl8">{{item}}</span>
+                            </div>
+                        </div>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                    </div>
+                    <div ms-if="el.lotteryId == 99" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="scSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <!-- PK10牛牛 -->
+                    <div ms-if="el.lotteryId == 90" class="result-box">
+                        <div class="mui-pull-left">
+                            <span ms-repeat-item="el.preNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                            <div class="top-content">
+                                <span class="ball-nn">庄</span>
+                                <span class="ball-nn">闲一</span>
+                                <span class="ball-nn">闲二</span>
+                                <span class="ball-nn">闲三</span>
+                                <span class="ball-nn">闲四</span>
+                                <span class="ball-nn">闲五</span>
+                            </div>
+                            <div class="bottom-content">
+                                <span class="ball-nn-re">{{getNn(el.n11)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n12)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n13)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n14)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n15)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n16)}}</span>
+                            </div>
+                        </div>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                    </div>
+                    <!-- 秒速牛牛 -->
+                    <div ms-if="el.lotteryId == 91" class="result-box">
+                        <div class="mui-pull-left">
+                            <span ms-repeat-item="el.preNum.split(',')" ms-class="ball-sc{{item-0}}" class="ball-sc">{{item}}</span>
+                            <div class="top-content">
+                                <span class="ball-nn">庄</span>
+                                <span class="ball-nn">闲一</span>
+                                <span class="ball-nn">闲二</span>
+                                <span class="ball-nn">闲三</span>
+                                <span class="ball-nn">闲四</span>
+                                <span class="ball-nn">闲五</span>
+                            </div>
+                            <div class="bottom-content">
+                                <span class="ball-nn-re">{{getNn(el.n11)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n12)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n13)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n14)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n15)}}</span>
+                                <span class="ball-nn-re">{{getNn(el.n16)}}</span>
+                            </div>
+                        </div>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                    </div>
+                    <div ms-if="el.lotteryId == 70" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',').slice(0,6)" ms-class="result-lhc-{{item}}">{{item}}</span><span class="lhc-span">+</span><span ms-repeat-item="el.preNum.split(',').slice(6)" ms-class="result-lhc-{{item}}">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span class="sc-sm ball-sc">{{el.n1_sx}}</span><span class="sc-sm ball-sc">{{el.n2_sx}}</span><span class="sc-sm ball-sc">{{el.n3_sx}}</span><span class="sc-sm ball-sc">{{el.n4_sx}}</span><span class="sc-sm ball-sc">{{el.n5_sx}}</span><span class="sc-sm ball-sc">{{el.n6_sx}}</span><span class="lhc-span"></span><span class="sc-sm ball-sc">{{el.n7_sx}}</span></div>
+                    </div>
+                    <!-- 江苏快3 -->
+                    <div ms-if="el.lotteryId == 10" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" class="k3ball" ms-class="k3ball{{item}}">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="ksSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <!-- 北京快3 -->
+                    <div ms-if="el.lotteryId == 11" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" class="k3ball" ms-class="k3ball{{item}}">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="ksSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <!-- 广西快3 -->
+                    <div ms-if="el.lotteryId == 12" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" class="k3ball" ms-class="k3ball{{item}}">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="ksSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                    <!-- 湖北快3 -->
+                    <div ms-if="el.lotteryId == 13" class="result-box">
+                        <span ms-repeat-item="el.preNum.split(',')" class="k3ball" ms-class="k3ball{{item}}">{{item}}</span>
+                        <span class="time">{{countdown(el.lotteryId,el.time)}}</span>
+                        <div><span ms-repeat="ksSm(el.preNum.split(','))" class="sc-sm ball-sc">{{el}}</span></div>
+                    </div>
+                </a>
+            </li>
+            <!--北京赛车-->
+<!--            <li class="mui-table-view-cell">
+                <a ms-on-tap="openDetail(openResults[50].game_name,openResults[50].gameId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">北京赛车</span>
+                        <span class="nper">第{{openResults[50].issue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <span ms-repeat="openResults[50].preNum.split(',')" ms-class="ball-sc{{el-0}}" class="ball-sc">{{el}}</span>
+                        <span class="time">{{countdown(openResults[50].endtime)}}</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;秒速飞艇&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a ms-on-tap="openDetail(openResults[82].game_name,openResults[82].gameId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">秒速飞艇</span>
+                        <span class="nper">第{{openResults[82].issue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <span ms-repeat="openResults[82].preNum.split(',')" ms-class="ball-sc{{el-0}}" class="ball-sc">{{el}}</span>
+                        <span class="time">{{countdown(openResults[82].endtime)}}</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;秒速时时彩&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a ms-on-tap="openDetail(openResults[81].game_name,openResults[81].gameId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">秒速时时彩</span>
+                        <span class="nper">第{{openResults[81].issue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <span ms-repeat="openResults[81].preNum.split(',')" class="ball-ssc">{{el}}</span>
+                        <span class="time">{{countdown(openResults[81].endtime)}}</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;重庆时时彩&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a ms-on-tap="openDetail(openResults[1].game_name,openResults[1].gameId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">重庆时时彩</span>
+                        <span class="nper">第{{openResults[1].issue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <span ms-repeat="openResults[1].preNum.split(',')" class="ball-ssc">{{el}}</span>
+                        <span class="time">{{countdown(openResults[1].endtime)}}</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;香港六合彩&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a href="" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">香港六合彩</span>
+                        <span class="nper">第0265611852期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="ball-lhc">1</span>
+                        <span class="ball-lhc">1</span>
+                        <span class="ball-lhc">1</span>
+                        <span class="ball-lhc">1</span>
+                        <span class="ball-lhc">1</span>
+                        <span class="time">封盘</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;PC蛋蛋&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a ms-on-tap="openDetail(openResults[66].game_name,openResults[66].gameId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">PC蛋蛋</span>
+                        <span class="nper">第{{openResults[66].issue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <span ms-repeat="openResults[66].preNum.split(',')" class="ball-dd">{{el}}</span>
+                        <span class="ball-dd no-ball">=</span>
+                        <span class="ball-dd">{{addValue(openResults[66].preNum.split(','))}}</span>
+                        <span class="time">{{countdown(openResults[66].endtime)}}</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;北京快乐8&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a ms-on-tap="openDetail(openResults[65].game_name,openResults[65].gameId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">北京快乐8</span>
+                        <span class="nper">第{{openResults[65].issue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <div class="mui-pull-left">
+                            <div class="top-content">
+                                <span ms-repeat="openResults[65].preNum.split(',').splice(0,10)" class="ball-kl8">{{el}}</span>
+                            </div>
+                            <div class="bottom-content">
+                                <span ms-repeat="openResults[65].preNum.split(',').splice(10)" class="ball-kl8">{{el}}</span>
+                            </div>
+                        </div>
+                        <span class="time">{{countdown(openResults[65].endtime)}}</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;跑马&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a ms-on-tap="openDetail(openResults[99].game_name,openResults[99].gameId)" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">跑马</span>
+                        <span class="nper">第{{openResults[99].issue}}期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <span ms-repeat="openResults[99].preNum.split(',')" ms-class="ball-sc{{el-0}}" class="ball-sc">{{el}}</span>
+                        <span class="time">{{countdown(openResults[99].endtime)}}</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;PK10牛牛&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a href="" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">PK10牛牛</span>
+                        <span class="nper">第0265611852期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <div class="mui-pull-left">
+                            <div class="top-content">
+                                <span class="ball-nn">庄</span>
+                                <span class="ball-nn">闲一</span>
+                                <span class="ball-nn">闲二</span>
+                                <span class="ball-nn">闲三</span>
+                                <span class="ball-nn">闲四</span>
+                            </div>
+                            <div class="bottom-content">
+                                <span class="ball-nn-re">牛一</span>
+                                <span class="ball-nn-re ball-nn-no">无牛</span>
+                                <span class="ball-nn-re">牛一</span>
+                                <span class="ball-nn-re">牛一</span>
+                                <span class="ball-nn-re">牛一</span>
+                            </div>
+                        </div>
+                        <span class="time">封盘</span>
+                    </div>
+                </a>
+            </li>
+            &lt;!&ndash;秒速牛牛&ndash;&gt;
+            <li class="mui-table-view-cell">
+                <a href="" class="mui-navigate-right">
+                    <div class="title-box">
+                        <span class="lottery-name">秒速牛牛</span>
+                        <span class="nper">第0265611852期</span>
+                        <span class="open-time">开奖时间</span>
+                    </div>
+                    <div class="result-box">
+                        <div class="mui-pull-left">
+                            <div class="top-content">
+                                <span class="ball-nn">庄</span>
+                                <span class="ball-nn">闲一</span>
+                                <span class="ball-nn">闲二</span>
+                                <span class="ball-nn">闲三</span>
+                                <span class="ball-nn">闲四</span>
+                            </div>
+                            <div class="bottom-content">
+                                <span class="ball-nn-re">牛一</span>
+                                <span class="ball-nn-re ball-nn-no">无牛</span>
+                                <span class="ball-nn-re">牛一</span>
+                                <span class="ball-nn-re">牛一</span>
+                                <span class="ball-nn-re">牛一</span>
+                            </div>
+                        </div>
+                        <span class="time">封盘</span>
+                    </div>
+                </a>
+            </li>-->
+        </ul>
+    </div>
+</div>
+<script src="../js/vendor/mui.js"></script>
+<script src="../js/vendor/avalon.modern.shim.js"></script>
+<script src="../js/vendor/jquery.min.js"></script>
+<script src="../js/extends.js"></script>
+<script src="../js/xhrConfig.js"></script>
+<script src="../js/actions.js"></script>
+<script src="../js/src/home/open.list.js"></script>
+</body>
+
+</html>

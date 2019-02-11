@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+</head>
+<body ms-controller="my.redbag">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">红包查询</h1>
+</header>
+<div class="mui-content">
+<div class="table-list">
+    <div class="mui-row  list-th">
+        <div class="mui-col-xs-4">
+            时间
+        </div>
+        <div class="mui-col-xs-4">
+            金额
+        </div>
+        <div class="mui-col-xs-4">
+            状态
+        </div>
+    </div>
+</div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="redbag.js"></script>
+<script>
+    mui.init({
+        subpages:[{
+            url:'redbagList.html',//下拉刷新内容页面地址
+            id:'redbag.list',//内容页面标志
+            styles:{
+                top:'89px',
+                bottom:'0'
+            }
+        }]
+    });
+</script>
+</body>
+</html>

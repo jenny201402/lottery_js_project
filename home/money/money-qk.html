@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<meta name="HandheldFriendly" content="true"/>
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../../css/mui.min.css">
+	<link rel="stylesheet" href="../../less/base.css">
+	<link rel="stylesheet" href="../../less/money.css">
+</head>
+<body ms-controller="tab-top-subpage-2.html">
+<div ms-if="showView">
+	<div class="qk-content" ms-if="hasBind == 1">
+		<input type="text" ms-duplex="amount" class="money-input" pattern="\d*" placeholder="请填写取款金额">
+		<div class="show-tips">单笔下限100，上限1000000</div>
+		<input type="text" readonly class="money-input" ms-attr-value="bankInfo.cardNo +' '+ bankInfo.subAddress">
+		<input type="password" ms-duplex="fundPwd" pattern="\d*" class="money-input" placeholder="请填写取款密码">
+		<button type="button" ms-on-tap="sure(this)" data-loading-text="提交中" class="mt-20 mui-btn next-pre-btn">确认提交</button>
+	</div>
+	<div ms-if="hasBind == 0" class="qk-content mui-text-center">
+		<div class="bank-img"></div>
+		<div class="show-msg">您还未绑定出款银行卡</div>
+		<button type="button" ms-on-tap="bindBank" class="mt-20 mui-btn next-pre-btn">立即绑定</button>
+	</div>
+</div>
+<script src="../../js/vendor/mui.js"></script>
+<script src="../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../js/vendor/jquery.min.js"></script>
+<script src="../../js/vendor/md5.js"></script>
+<script src="../../js/extends.js"></script>
+<script src="../../js/xhrConfig.js"></script>
+<script src="../../js/actions.js"></script>
+<script src="money-qk.js"></script>
+</body>
+</html>

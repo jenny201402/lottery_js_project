@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+</head>
+<body ms-controller="base.lhc">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">{{title}}</h1>
+    <span ms-if="viewActive === '0'" ms-on-tap="menuList" class="lottery-menu mui-icon mui-icon-bars mui-pull-right"></span>
+    <div ms-if="menuView" ms-on-tap="menuViewHandler" class="m-backdrop">
+        <div class="menu-list mui-pull-right">
+            <div ms-on-tap="nowBetting" class="list">
+                即时注单
+                <div class="red">
+                    <span ms-if="showMoney">({{unbalancedMoney|currency}})</span>
+                    <span ms-if="!showMoney" class="load-icon mui-icon mui-icon-spinner-cycle"></span>
+                </div>
+            </div>
+            <div ms-on-tap="todayFinish" class="list">今日已结</div>
+            <div ms-on-tap="bettingList" class="list">下注记录</div>
+            <div ms-on-tap="openResult" class="list">开奖结果</div>
+            <div ms-on-tap="gamaRules" class="list">游戏规则</div>
+            <div ms-on-tap="towFace" class="list">两面长龙</div>
+            <div ms-on-tap="road" class="list">路珠</div>
+            <div ms-on-tap="moneyHandler('ck')" class="list">充值</div>
+            <div ms-on-tap="moneyHandler('qk')" class="list">提现</div>
+            <div ms-on-tap="winLose" class="list">
+                今天输赢
+                <div class="red">
+                    <span ms-if="showMoney">({{winMoney|currency}})</span>
+                    <span ms-if="!showMoney" class="load-icon mui-icon mui-icon-spinner-cycle"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="mui-content">
+    <div class="tab-top-nav">
+        <a ms-on-tap="changeView('0')" ms-class="active: viewActive === '0'" class="tab-item">投注区</a>
+        <a ms-on-tap="changeView('1')" ms-class="active: viewActive === '1'" class="tab-item">聊天室</a>
+    </div>
+</div>
+<div  style="position: absolute;width: 100%;top:100px;bottom: 70px;">
+    <div ms-if="showModule" class="betting-content">
+        <div class="top-betting-result mui-clearfix">
+            <div class="nper mui-pull-left">
+                {{preIssue}}期：
+            </div>
+            <div class="result mui-pull-left">
+                <div><span ms-repeat="preNum.slice(0,6)" ms-class="result-lhc-{{el}}">{{el}}</span><span class="lhc-span">+</span><span ms-repeat="preNum.slice(6)" ms-class="result-lhc-{{el}}">{{el}}</span></div>
+                <div><span ms-repeat="smResult.slice(0,6)" class="sc-result">{{el}}</span><span class="lhc-span"></span><span ms-repeat="smResult.slice(6)" class="sc-result">{{el}}</span></div>
+            </div>
+        </div>
+        <div class="fe-time mui-clearfix">
+            <div class="mui-pull-left">
+                {{issue}}期：
+            </div>
+            <div class="mui-pull-left">
+                封盘：<span>{{fptime}}</span>
+            </div>
+            <div class="mui-pull-left">
+                开奖：<span>{{kjtime}}</span>
+            </div>
+        </div>
+        <div class="mui-row mui-fullscreen" style="top:84px">
+            <div class="mui-col-xs-3 betting-type">
+                <div ms-each="configList" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-vertical">
+                    <a class="mui-control-item" ms-class="mui-active: type === $key" ms-on-tap="chooseType($key)">{{$val.name}}</a>
+                </div>
+            </div>
+            <div class="mui-col-xs-9 betting-area">
+                <div class="mui-row" ms-if="type === 'tm'">
+                    <div ms-repeat="tab" class="mui-col-xs-6 mui-text-center type-tab bb" ms-class="active : tabActive == el.id" ms-on-tap="tabChange(el.id)">{{el.title}}</div>
+                </div>
+                <div ms-repeat="methodsList">
+                    <div ms-if="type === 'tm'">
+                        <div ms-if="el.id == tabActive">
+                            <div class="mui-row bb">
+                                <div class="mui-col-xs-12 cheng mui-text-center type-title">{{el.title}}</div>
+                            </div>
+                            <div class="mui-row" style="border-bottom: 1px solid #c8c7cc">
+                                <div ms-repeat-item="el.type" class="mui-text-center type-c" ms-class="{{item.width}}">
+                                    <div ms-on-tap="chooseHandler(item,el.title,getOdds(item.id))" class="mui-clearfix" ms-class="on: item.checked === true">
+                                        <div ms-if="item.line != true">
+                                            <div class="mui-col-xs-6 mui-text-center mui-pull-left"><span ms-class="{{item.class}}">{{item.title}}</span></div>
+                                            <div class="mui-col-xs-6 mui-text-center zihong mui-pull-left">{{getOdds(item.id)}}</div>
+                                        </div>
+                                        <div ms-if="item.line === true" class="line">
+                                            <div class="mui-pull-left">
+                                                {{item.title}} <span class="zihong">{{getOdds(item.id)}}</span>
+                                            </div>
+                                            <div class="mui-pull-right">
+                                                <span ms-repeat-ball="item.list" ms-class="{{ball.class}}">{{ball.title}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div ms-if="type != 'tm'">
+                        <div class="mui-row bb">
+                            <div class="mui-col-xs-12 cheng mui-text-center type-title">{{el.title}}</div>
+                        </div>
+                        <div class="mui-row" style="border-bottom: 1px solid #c8c7cc">
+                            <div ms-repeat-item="el.type" class="mui-text-center type-c" ms-class="{{item.width}}">
+                                <div ms-on-tap="chooseHandler(item,el.title,getOdds(item.id))" class="mui-clearfix" ms-class="on: item.checked === true">
+                                    <div ms-if="item.line != true">
+                                        <div class="mui-col-xs-6 mui-text-center mui-pull-left"><span ms-class="{{item.class}}">{{item.title}}</span></div>
+                                        <div class="mui-col-xs-6 mui-text-center zihong mui-pull-left">{{getOdds(item.id)}}</div>
+                                    </div>
+                                    <div ms-if="item.line === true" class="line">
+                                        <div class="mui-pull-left">
+                                            {{item.title}} <span class="zihong">{{getOdds(item.id)}}</span>
+                                        </div>
+                                        <div class="mui-pull-right">
+                                            <span ms-repeat-ball="item.list" ms-class="{{ball.class}}">{{ball.title}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ms-if="iffp" class="betfkdialog">
+            </div>
+        </div>
+        <div class="bottom-betting-content">
+            <div class="mui-row personal-message">
+                <div class="mui-col-xs-6">已选：<span>{{bettingArr.length}}注</span></div>
+                <div class="mui-col-xs-6">可用余额：<span>{{balance}}元</span></div>
+            </div>
+            <div class="user-set-content">
+                <div class="mui-row">
+                    <div class="mui-col-xs-4">
+                        <input ms-duplex="bettingMoney" class="money-entry" pattern="\d*" type="text" placeholder="输入金额">
+                    </div>
+                    <div class="mui-col-xs-2">
+                        <button ms-on-tap="showChouma" type="button" class=" money-btn mui-btn mui-btn-success">金额</button>
+                    </div>
+                    <div class="mui-col-xs-6">
+                        <button ms-on-tap="betting" type="button" class="mui-btn mui-btn-danger">下注</button>
+                        <button ms-on-tap="resetBettingChoose" type="button" class="mui-btn mui-btn-primary">重置</button>
+                    </div>
+                </div>
+                <div ms-if='choumaShow' class="chouma">
+                    <button ms-on-tap='chooseMoney(10)' type="button" class="mui-btn mui-btn-warning">10</button>
+                    <button ms-on-tap='chooseMoney(100)' type="button" class="mui-btn mui-btn-warning">100</button>
+                    <button ms-on-tap='chooseMoney(1000)' type="button" class="mui-btn mui-btn-warning">1千</button>
+                    <button ms-on-tap='chooseMoney(10000)' type="button" class="mui-btn mui-btn-warning">1万</button>
+                    <button ms-on-tap='clearMoney' type="button" class="mui-btn mui-btn-warning">清</button>
+                </div>
+                <div ms-if="iffp" class="fpdialog">封盘</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ms-if="detailDialog" class="dialog">
+    <div class="betting-dialog">
+        <div class="top">下注清单</div>
+        <div class="middle">
+            <div ms-repeat="bettingListDetail" class="betting-list">【{{el.title}}-{{el.name}}】&nbsp;&nbsp;@{{el.odds}} x {{bettingMoney}}</div>
+        </div>
+        <div class="bottom">
+            <div class="tongji">
+                【合计】总注数： <span>{{bettingListDetail.length}}</span> 总金额： <span>{{totalMoney}}</span>
+            </div>
+            <div class="button">
+                <button ms-on-tap="cancelDialog" type="button" class="mui-pull-left mui-btn mui-btn-outlined">取消</button>
+                <button ms-on-tap="sureBetting" type="button" class="mui-pull-right mui-btn mui-btn-primary">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="config/method.config.js"></script>
+<script src="../../../js/extends.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="https://fh888.f8710.com/static/gamedatas.js"></script>
+<script src="lhc.js"></script>
+</body>
+</html>

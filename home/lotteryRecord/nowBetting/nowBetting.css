@@ -1,0 +1,54 @@
+.mui-content {
+  height: 100vh;
+  position: relative;
+}
+.lottery-name {
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 15px;
+}
+.table-content {
+  position: absolute;
+  width: 100vw;
+  top: 74px;
+  bottom: 40px;
+  overflow: auto;
+}
+.table-content .table-view {
+  width: 100vw;
+  border: 1px solid #c8c7cc;
+  text-align: center;
+  background: #ffffff;
+  font-size: 14px;
+}
+.table-content .table-view .head {
+  height: 33px;
+}
+.table-content .table-view .head td {
+  padding: 0!important;
+}
+.table-content .table-view.bet-all td {
+  width: 33.33%;
+}
+.table-content .table-view.detail td {
+  width: 25%;
+}
+.table-content .table-view td {
+  padding: 10px;
+}
+.foot {
+  font-size: 14px;
+  padding-right: 15px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  line-height: 40px;
+  text-align: right;
+  border-top: 1px solid #c8c7cc;
+}
+.green {
+  color: green;
+}

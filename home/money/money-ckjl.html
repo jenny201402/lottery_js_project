@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link rel="stylesheet" href="../../less/base.css">
+	<link rel="stylesheet" href="../../css/mui.min.css">
+	<link rel="stylesheet" href="../../less/money.css">
+</head>
+<body>
+<script src="../../js/vendor/mui.js"></script>
+<script src="../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../js/vendor/jquery.min.js"></script>
+<script>
+	mui.init({
+		subpages:[{
+			url:'record/ckjlList.html',//下拉刷新内容页面地址
+			id:'money.ckjl.list',//内容页面标志
+			styles:{
+				top:'0',
+				bottom:'0'
+			}
+		}]
+	});
+</script>
+</body>
+</html>

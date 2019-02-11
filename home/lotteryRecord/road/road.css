@@ -1,0 +1,130 @@
+.road-content .mui-col-xs-6 {
+  padding: 0 15px;
+  height: 60px;
+  line-height: 60px;
+}
+.road-content .lottery-select {
+  border: 1px solid #c8c7cc!important;
+  margin: 10px 0;
+  height: 40px;
+  line-height: 40px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.road-content .refresh-btn {
+  height: 30px;
+  line-height: 30px;
+  margin-top: 15px;
+  float: left;
+  background: #007aff;
+  border-radius: 4px;
+  border: 1px solid #007aff;
+  color: #FFFFFF;
+  padding: 0 15px;
+}
+.road-content .title-list {
+  width: 100%;
+  padding: 0 15px;
+  height: 55px;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: scroll;
+  /* 1 */
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-overflow-scrolling: touch;
+  /* 2 */
+  text-align: justify;
+  /* 3 */
+}
+.road-content .title-list::-webkit-scrollbar {
+  display: none;
+}
+.road-content .title-list .content .list {
+  display: inline-block;
+  width: 100px;
+  height: 44px;
+  margin-left: 4px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 8px;
+  background-color: #db5733;
+  /* let's use box shadows to make the button look more 3-dimensional */
+  box-shadow: 0px 9px 0px #db1f05, 0px 9px 25px rgba(0, 0, 0, 0.7);
+  -webkit-transition: all .1s ease;
+  -moz-transition: all .1s ease;
+  transition: all .1s ease;
+}
+.road-content .title-list .content .list:active {
+  box-shadow: 0px 3px 0px #db1f05, 0px 3px 6px rgba(0, 0, 0, 0.9);
+  position: relative;
+  top: 6px;
+}
+.road-content .title-list .content .list.active {
+  box-shadow: 0px 3px 0px #db1f05, 0px 3px 6px rgba(0, 0, 0, 0.9);
+  position: relative;
+  top: 6px;
+}
+.road-content .title-list .content .list:first-child {
+  margin-left: 0;
+}
+.road-content .road-list {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: scroll;
+  /* 1 */
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-overflow-scrolling: touch;
+  /* 2 */
+  text-align: justify;
+  /* 3 */
+}
+.road-content .road-list::-webkit-scrollbar {
+  display: none;
+}
+.road-content .road-list .content:first-child .result-list {
+  border-top: 1px solid #c8c7cc;
+}
+.road-content .road-list .content .result-list {
+  width: 10%;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 14px;
+  border-right: 1px solid #c8c7cc;
+  border-bottom: 1px solid #c8c7cc;
+  bottom: -1px;
+}
+.road-content .road-list .content .result-list:first-child {
+  border-left: 1px solid #c8c7cc;
+}
+.road-content .rode-down-list {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  overflow-x: scroll;
+  /* 1 */
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  -webkit-overflow-scrolling: touch;
+  /* 2 */
+  text-align: justify;
+  /* 3 */
+}
+.road-content .rode-down-list::-webkit-scrollbar {
+  display: none;
+}
+.road-content .rode-down-list .table-view {
+  border: 1px solid #c8c7cc;
+}
+.road-content .rode-down-list .load-td {
+  width: 40px;
+  font-size: 14px;
+}
+.mt-20 {
+  margin-top: 20px;
+}

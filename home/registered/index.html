@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../less/base.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body ms-controller="registered">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">用户注册</h1>
+</header>
+<div class="mui-content">
+    <div class="login-content">
+        <div class="input-row">
+            <span class="login-icon mui-icon mui-icon-person"></span>
+            <input type="text" class="login-input mui-input-clear" ms-duplex="userName" placeholder="请输入用户名(必填)">
+        </div>
+        <div class="input-row mui-input-row">
+            <span class="login-icon mui-icon mui-icon-locked"></span>
+            <input type="password" class=" login-input mui-input-password" ms-duplex="password" placeholder="请输入登录密码(必填)">
+        </div>
+        <div class="input-row mui-input-row">
+            <span class="login-icon mui-icon mui-icon-locked"></span>
+            <input type="password" class=" login-input mui-input-password" ms-duplex="againPassword" placeholder="确认密码(必填)">
+        </div>
+        <div class="input-row">
+            <span class="login-icon mui-icon mui-icon-person"></span>
+            <input type="text" class="login-input mui-input-clear" ms-duplex="fullName" placeholder="真实姓名(必填)">
+        </div>
+        <div class="input-row">
+            <span class="login-icon mui-icon mui-icon-person"></span>
+            <input type="text" class="login-input mui-input-clear" placeholder="推荐人">
+        </div>
+        <div class="button-group">
+            <button ms-on-tap="Registered(this)" data-loading-text="提交中" class="mui-btn next-pre-btn">立即注册</button>
+        </div>
+    </div>
+</div>
+<script src="../../js/vendor/mui.js"></script>
+<script src="../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../js/vendor/jquery.min.js"></script>
+<script src="../../js/vendor/md5.js"></script>
+<script src="../../js/xhrConfig.js"></script>
+<script src="../../js/actions.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

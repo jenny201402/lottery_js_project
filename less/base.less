@@ -1,0 +1,926 @@
+/*
+公用基础样式表
+*/
+[ms-controller],
+[ms-important] {
+  visibility: hidden;
+}
+@bg-header: #D7213b;
+@table-th:#F6F6F6;
+@pk10-1:rgb(224, 224, 43);
+@pk10-2:rgb(2, 137, 255);
+@pk10-3:rgb(58, 57, 57);
+@pk10-4:rgb(255, 115, 1);
+@pk10-5:rgb(92, 222, 222);
+@pk10-6:rgb(80, 0, 248);
+@pk10-7:rgb(165, 165, 165);
+@pk10-8:rgb(255, 0, 0);
+@pk10-9:rgb(118, 0, 0);
+@pk10-10:rgb(39, 193, 0);
+.red{
+  color: red;
+}
+.blue{
+  color: #007aff;
+}
+.green{
+  color: green;
+}
+.cheng{
+  color: #fdbc00;
+}
+.zihong{
+  color:@bg-header;
+}
+body{
+  background: #ffffff;
+}
+.mui-content{
+  background: #ffffff;
+}
+.title-bg{
+  background: @bg-header;
+  .title-left{
+    text-align: left!important;
+  }
+    h1{
+        color:#ffffff;
+    }
+  .mui-action-back{
+    color: #ffffff;
+  }
+  .index-personal{
+   position: absolute;
+    right: 20px;
+    z-index: 1000;
+    font-size: 0;
+    a{
+      color:#ffffff;
+      font-size: 12px;
+      margin-left: 10px;
+      display: inline-block;
+      height: 26px;
+      line-height: 26px;
+      margin-top: 9px;
+      padding: 0 8px;
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 4px;
+      &.no-b{
+        border: 0;
+        border-bottom: 1px solid rgba(255,255,255,.4);
+        border-radius: 0;
+      }
+      .mui-icon{
+        display: inline-block;
+        padding: 0 15px 0 5px;
+        font-size: 20px;
+      }
+     }
+  }
+  .lottery-menu{
+    color: #ffffff;
+  }
+  .m-backdrop{
+    position: fixed;
+    top: 44px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.3);
+    .menu-list{
+      width: 150px;
+      background: #ffffff;
+      margin-right: 10px;
+      border: 1px solid #c8c7cc;
+      .list{
+        text-align: center;
+        border-bottom: 1px solid #c8c7cc;
+        padding: 8px 0;
+        font-size: 16px;
+        &:last-child{
+          border-bottom: 0;
+        }
+        .load-icon{
+          padding: 0;
+          margin: 0;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+.mui-bar-tab-home.home-index>.mui-tab-item-home.mui-active{
+  color:@bg-header
+}
+.mui-bar-home{
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  left: 0;
+  height: 44px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-bottom: 0;
+  background-color: #f7f7f7;
+  -webkit-box-shadow: 0 0 1px rgba(0,0,0,.85);
+  box-shadow: 0 0 1px rgba(0,0,0,.85);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.mui-bar-tab-home{
+  bottom: 0;
+  display: table;
+  width: 100%;
+  height: 50px;
+  padding: 0;
+  table-layout: fixed;
+  border-top: 0;
+  border-bottom: 0;
+  -webkit-touch-callout: none;
+  .mui-tab-item-home{
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+    .mui-icon{
+      top: 3px;
+      width: 24px;
+      height: 24px;
+      padding-top: 4px;
+      padding-bottom: 0;
+      &~.mui-tab-label{
+        font-size: 11px;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+.table-list{
+  font-size: 14px;
+  text-align: center;
+  .list-th,.list-td{
+    border-bottom: 1px solid #c8c7cc;
+  }
+  .list-th{
+    background: @table-th;
+    height: 45px;
+    line-height: 45px;
+  }
+  .list-td{
+    height: 50px;
+    line-height: 50px;
+  }
+}
+.next-pre-btn{
+  width: 100%;
+  height: 40px;
+  background: #D7213b;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+}
+.tab-top-nav{
+    width: 100%;
+    height: 50px;
+    font-size: 0;
+  .tab-item{
+    color:#333333;
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    height: 50px;
+    line-height: 48px;
+    border-bottom: 1px solid #c8c7cc;
+    width: 50%;
+    &.active{
+      border-bottom: 2px solid #D7213b;
+      color:#D7213b;
+    }
+  }
+}
+.betting-content{
+  width: 100%;
+  position: relative;
+  height: 100%;
+  /*height: 100vh;*/
+  .top-betting-result{
+    padding: 4px;
+    font-size: 14px;
+    .result{
+      margin-left: 5px;
+      .result-ball-ssc{
+        color:#ffffff;
+        font-size: 12px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        border-radius: 18px;
+        background: #D7213b;
+      }
+      .result-ball-pk10{
+        color:#ffffff;
+        font-size: 12px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        border-radius: 2px;
+        &.pk1,&.pk01{
+          background: @pk10-1;
+        }
+        &.pk2,&.pk02{
+          background: @pk10-2;
+        }
+        &.pk3,&.pk03{
+          background: @pk10-3;
+        }
+        &.pk4,&.pk04{
+          background: @pk10-4;
+        }
+        &.pk5,&.pk05{
+          background: @pk10-5;
+        }
+        &.pk6,&.pk06{
+          background: @pk10-6;
+        }
+        &.pk7,&.pk07{
+          background: @pk10-7;
+        }
+        &.pk8,&.pk08{
+          background: @pk10-8;
+        }
+        &.pk9,&.pk09{
+          background: @pk10-9;
+        }
+        &.pk10{
+          background: @pk10-10;
+        }
+      }
+      .sc-result{
+        color:#333333;
+        font-size: 12px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+        border-radius: 2px;
+        border: 1px solid #c8c7cc;
+        background: rgba(0,0,0,0.1);
+      }
+      .result-text-ssc{
+        font-size: 12px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        line-height: 18px;
+        text-align: center;
+      }
+      .result-lhc-01,.result-lhc-1,.result-lhc-02,.result-lhc-2,.result-lhc-07,.result-lhc-7,.result-lhc-08,.result-lhc-8,.result-lhc-12,.result-lhc-13,.result-lhc-18,.result-lhc-19,.result-lhc-23,.result-lhc-24,.result-lhc-29,.result-lhc-30,.result-lhc-34,.result-lhc-35,.result-lhc-40,.result-lhc-45,.result-lhc-46{
+        color: #ffffff;
+        font-size: 12px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        background: url("../images/lhc-ball-red.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .result-lhc-05,.result-lhc-5,.result-lhc-06,.result-lhc-6,.result-lhc-11,.result-lhc-16,.result-lhc-17,.result-lhc-21,.result-lhc-22,.result-lhc-27,.result-lhc-28,.result-lhc-32,.result-lhc-33,.result-lhc-38,.result-lhc-39,.result-lhc-43,.result-lhc-44,.result-lhc-49{
+        color: #ffffff;
+        font-size: 12px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        background: url("../images/lhc-ball-green.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .result-lhc-03,.result-lhc-3,.result-lhc-04,.result-lhc-4,.result-lhc-09,.result-lhc-9,.result-lhc-10,.result-lhc-14,.result-lhc-15,.result-lhc-20,.result-lhc-25,.result-lhc-26,.result-lhc-31,.result-lhc-36,.result-lhc-37,.result-lhc-41,.result-lhc-42,.result-lhc-47,.result-lhc-48{
+        color: #ffffff;
+        font-size: 12px;
+        margin-left: 5px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+        background: url("../images/lhc-ball-blue.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .lhc-span{
+        font-size: 12px;
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        font-weight: bold;
+        line-height: 18px;
+        text-align: center;
+      }
+    }
+  }
+  .nn-result{
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+    span{
+      width: 30%;
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      border: 1px solid #c8c7cc;
+      text-align: center;
+      display: inline-block;
+      border-radius: 3px;
+      margin: 5px 1% 0 1%;
+      background: rgba(0,0,0,0.1);
+      &.active{
+        border-color: #D7213b;
+      }
+    }
+  }
+  .fe-time{
+    padding: 4px;
+    border-top: 1px solid #c8c7cc;
+    font-size: 14px;
+    &>div{
+      margin-left: 10px;
+      &:first-child{
+        margin-left: 0;
+      }
+      span{
+        display: inline-block;
+        width: 65px;
+        line-height: 20px;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .15);
+        border-radius: 2px;
+      }
+    }
+  }
+  .bottom-betting-content{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    border-top: 1px solid #c8c7cc;
+    .personal-message{
+      font-size: 12px;
+      text-align: center;
+      height: 20px;
+      line-height: 20px;
+      &>div{
+        &:first-child{
+          border-right: 1px solid #c8c7cc
+        }
+      }
+    }
+    .user-set-content{
+      width: 100%;
+      height: 50px;
+      background: rgba(0,0,0,0.8);
+      text-align: center;
+      position: relative;
+      .money-entry{
+        width: 80%;
+        height: 30px;
+        margin: 10px 0 10px 0;
+        font-size: 14px;
+      }
+      button{
+        width: 40%;
+        font-size: 14px;
+        margin: 10px 0 10px 0;
+        height: 30px;
+        padding: 0;
+        line-height: 30px;
+        &.money-btn{
+          width: 95%;
+        }
+      }
+      .chouma{
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height: 40px;
+        top:-40px;
+        background: rgba(0,0,0,0.3);
+        button{
+          width: 18%;
+        }
+      }
+      .fpdialog{
+        position: absolute;
+        height: 50px;
+        line-height: 50px;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: rgba(0,0,0,.5);
+        color: #ffffff;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+  .betting-type{
+    background: #f1f1f1;
+    .mui-segmented-control{
+      .mui-control-item{
+        width: 100%;
+        line-height: 40px;
+        background: #dddddd;
+      }
+    }
+  }
+  .betting-area{
+    border-left: 1px solid #c8c7cc;
+    background: #ffffff;
+    font-size: 14px;
+    overflow: auto;
+    position: relative;
+    .type-title{
+      line-height: 30px;
+    }
+    .type-tab{
+      line-height: 40px;
+      border-right: 1px solid #c8c7cc;
+      &.active{
+        background: rgba(0,0,0,.5);
+        color: #FFFFFF;
+      }
+    }
+    .type-c{
+      line-height: 40px;
+      border-right: 1px solid #c8c7cc;
+      border-bottom: 1px solid #c8c7cc;
+      bottom: -1px;
+      .on{
+        background: #D7213b;
+        color:#ffffff;
+        .zihong{
+          color:#ffffff;
+        }
+      }
+      .ssc-ball{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        background: #666666;
+        border-radius: 20px;
+        color:#ffffff;
+      }
+      .pk10-ball{
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 4px;
+        color: #ffffff;
+      }
+      .pk10-ball1{
+        background: @pk10-1;
+      }
+      .pk10-ball2{
+        background: @pk10-2;
+      }
+      .pk10-ball3{
+        background: @pk10-3;
+      }
+      .pk10-ball4{
+        background: @pk10-4;
+      }
+      .pk10-ball5{
+        background: @pk10-5;
+      }
+      .pk10-ball6{
+        background: @pk10-6;
+      }
+      .pk10-ball7{
+        background: @pk10-7;
+      }
+      .pk10-ball8{
+        background: @pk10-8;
+      }
+      .pk10-ball9{
+        background: @pk10-9;
+      }
+      .pk10-ball10{
+        background: @pk10-10;
+      }
+      .red-ball{
+        color: #ffffff;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-left: 3px;
+        line-height: 25px;
+        font-weight: bold;
+        background: url("../images/lhc-ball-red.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .blue-ball{
+        color: #ffffff;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-left: 3px;
+        line-height: 25px;
+        font-weight: bold;
+        background: url("../images/lhc-ball-blue.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .green-ball{
+        color: #ffffff;
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-left: 3px;
+        line-height: 25px;
+        font-weight: bold;
+        background: url("../images/lhc-ball-green.png") no-repeat;
+        background-size: 100% 100%;
+      }
+      .line{
+        padding: 0 15px;
+      }
+    }
+    .bb{
+      border-bottom: 1px solid #c8c7cc;
+    }
+  }
+  .mui-fullscreen{
+    top:81px;
+    bottom:0;
+    left: 0;
+    right:0;
+    border-top: 1px solid #c8c7cc;
+    &.nn-fullscreen{
+      top:135px;
+    }
+    .betfkdialog{
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 25%;
+      right: 0;
+    }
+  }
+  .mui-row.mui-fullscreen>[class*="mui-col-"] {
+    height: 100%;
+  }
+  .mui-col-xs-3,
+  .mui-control-content {
+    overflow-y: auto;
+    height: 100%;
+  }
+  .mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+    background-color: #fff;
+    color:#D7213b;
+    position: relative;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 2px;
+      height:40px;
+      left: 0;
+      top:0;
+      background: #D7213b;
+    }
+  }
+}
+
+.dialog{
+  position: fixed;
+  z-index: 100000;
+  top:-50px;
+  bottom: 0;
+  left: 0;
+  right:0;
+  background: rgba(0,0,0,.3);
+  .betting-dialog{
+    width: 95vw;
+    height: 60vh;
+    margin: 20vh auto;
+    background: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    .top{
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid #c8c7cc;
+    }
+    .middle{
+      position: absolute;
+      width: 100%;
+      top:40px;
+      bottom: 80px;
+      overflow-y: auto;
+      padding: 10px 20px;
+      .betting-list{
+        height: 30px;
+        line-height: 30px;
+        font-size: 14px;
+        border-bottom: 1px solid #c8c7cc;
+      }
+    }
+    .bottom{
+      border-top: 1px solid #c8c7cc;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      padding: 0 20px;
+      .tongji{
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+        font-size: 14px;
+        span{
+          color: #D7213b;
+        }
+      }
+      .button{
+        width: 100%;
+        height: 45px;
+        text-align: center;
+        button{
+          width: 40%;
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+.result-box{
+  .k3ball{
+    margin-left: 5px;
+  }
+  .k3ball1 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball1.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball2 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball2.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball3 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball3.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball4 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball4.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball5 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball5.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball6 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball6.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .niu-cont{
+    display: inline-block;
+    background: #f0f0f0;
+    border: 1px solid #f0f0f0;
+  }
+}
+.result{
+  .result-ball-k1 {
+    font-size: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    background: url(../images/k3ball1.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .result-ball-k2 {
+    font-size: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    background: url(../images/k3ball2.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .result-ball-k3 {
+    font-size: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    background: url(../images/k3ball3.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .result-ball-k4 {
+    font-size: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    background: url(../images/k3ball4.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .result-ball-k5 {
+    font-size: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    background: url(../images/k3ball5.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .result-ball-k6 {
+    font-size: 0px;
+    margin-left: 5px;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
+    background: url(../images/k3ball6.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+}
+.type-c{
+  .k3ball{
+    margin-left: 5px;
+  }
+  .k3ball1 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball1.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball2 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball2.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball3 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball3.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball4 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball4.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball5 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball5.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+  .k3ball6 {
+    font-size: 0px;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    background: url(../images/k3ball6.png) no-repeat;
+    background-size: cover;
+    border:1px solid #f0f0f0;
+    border-radius:2px;  
+  }
+}
+.list-two-title{
+  background-color: #e0e0e0;
+}

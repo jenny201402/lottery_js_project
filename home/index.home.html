@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>首页</title>
+	<link href="../css/mui.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="../css/icons-extra.css" />
+	<link href="../less/base.css" rel="stylesheet">
+	<link href="../less/lottery.css" rel="stylesheet">
+</head>
+<body ms-controller="player.lottery" style="background: #ffffff">
+<div class="home-main">
+	<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+		<div class="mui-scroll open-result-content" ms-if="showView">
+			<div class="mui-content">
+				<div id="slider" class="mui-slider" >
+					<div class="mui-slider-group mui-slider-loop">
+						<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+						<div ms-if="sliders.length != 0" class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img ms-attr-src="sliders[3].imgUrl">
+							</a>
+						</div>
+						<!-- 第一张 -->
+						<div ms-repeat="sliders" class="mui-slider-item">
+							<a href="#">
+								<img ms-attr-src="el.imgUrl">
+							</a>
+						</div>
+						<!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+						<div ms-if="sliders.length != 0" class="mui-slider-item mui-slider-item-duplicate">
+							<a href="#">
+								<img ms-attr-src="sliders[0].imgUrl">
+							</a>
+						</div>
+					</div>
+					<div class="mui-slider-indicator">
+						<div class="mui-indicator mui-active"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+						<div class="mui-indicator"></div>
+					</div>
+				</div>
+				<div class="mui-row kj-content">
+					<div class="mui-col-xs-4" ms-on-tap="recharge">
+						<div class="kj-set">
+							<img src="../images/cz-icon.png" alt="">
+						</div>
+						<div class="text">充值</div>
+					</div>
+					<div class="mui-col-xs-4" ms-on-tap="tkuan">
+						<div class="kj-set">
+							<img src="../images/tk-icon.png" alt="">
+						</div>
+						<div class="text">提款</div>
+					</div>
+					<div class="mui-col-xs-4" ms-on-tap="service">
+						<div class="kj-set">
+							<span class="mui-icon mui-icon-chat"></span>
+						</div>
+						<div class="text">客服</div>
+					</div>
+				</div>
+				<div class="notice">
+					<span class="mui-icon mui-icon-extra mui-icon-extra-notice"></span>
+					<div class="title"><marquee behavior="" direction="" scrollamount="2"><span style="display: inline-block;width: 100%" ms-on-tap="showNotice(notices[0])">{{notices[0].title}}</span></marquee></div>
+				</div>
+				<div class="lottery-content">
+					<div class="title">
+						<span class="mui-icon mui-icon-extra mui-icon-extra-new red"></span>
+						<span class="text">热门彩种</span>
+					</div>
+					<div class="mui-content">
+						<!--<div class="mui-row">
+							<div class="mui-col-xs-6" ms-repeat="lotteryList">
+								<a class=" lottery-box" ms-on-tap="openBaseModule(el)">
+									<img class="icon-img-h mui-pull-left" ms-attr-src="../images/{{el.pic}}">
+									<div class="base-name-h">{{el.name}}</div>
+								</a>
+							</div>
+						</div>-->
+						<ul ms-each="lotteryList" class="mui-table-view mui-grid-view mui-grid-9">
+							<li class="mui-table-view-cell mui-media mui-col-xs-4">
+								<a ms-on-tap="openBaseModule(el)">
+									<img class="icon-img" ms-attr-src="../images/{{el.pic}}">
+									<div class="mui-media-body">
+										<div class="base-name">{{el.name}}</div>
+									</div>
+									<!--<div class="mui-media-body">
+                                        <div class="base-de">{{el.text}}</div>
+                                    </div>-->
+								</a>
+							</li>
+						</ul>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="../js/vendor/avalon.modern.shim.js"></script>
+<script src="../js/vendor/jquery.min.js"></script>
+<script src="../js/vendor/mui.js"></script>
+<script src="../js/src/config/lottery.config.js"></script>
+<script src="../js/xhrConfig.js"></script>
+<script src="../js/actions.js"></script>
+<script src="../js/extends.js"></script>
+<script src="../js/src/home/index.home.js"></script>
+</body>
+</html>

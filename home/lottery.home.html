@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link href="../less/base.css" rel="stylesheet">
+</head>
+<body ms-controller="open.lottery">
+<script src="../js/vendor/mui.js"></script>
+<script src="../js/vendor/avalon.modern.shim.js"></script>
+<script src="../js/vendor/jquery.min.js"></script>
+<script src="../js/src/home/open.lottery.js"></script>
+<script>
+    mui.init({
+        subpages:[{
+            url:'open.list.html',//下拉刷新内容页面地址
+            id:'open_list',//内容页面标志
+            styles:{
+            top:'0',
+        }
+    }]
+    });
+</script>
+</body>
+</html>

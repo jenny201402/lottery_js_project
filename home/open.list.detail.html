@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link href="../less/base.css" rel="stylesheet">
+    <link href="../less/open.lottery.css" rel="stylesheet">
+</head>
+<body ms-controller="open.list.detail">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">开奖结果</h1>
+</header>
+<div class="mui-content open-table">
+    <div class="search-box mui-row">
+        <div class="mui-col-xs-6">
+            <select class="lottery-select" ms-duplex="gameId">
+                <option ms-repeat="lottery" ms-attr-value="el.id">{{el.name}}</option>
+            </select>
+        </div>
+        <div class="mui-col-xs-6">
+            <select class="lottery-select" ms-duplex="time">
+                <option ms-repeat="dateList" ms-attr-value="el.id">{{el.val}}</option>
+            </select>
+        </div>
+    </div>
+    <table border="1" class="table-view list">
+        <tr>
+            <td class="qh np mui-text-center">
+                期数/时间
+            </td>
+            <td class="kj np mui-text-center">开奖号码</td>
+        </tr>
+    </table>
+</div>
+<script src="../js/vendor/mui.js"></script>
+<script src="../js/vendor/avalon.modern.shim.js"></script>
+<script src="../js/vendor/jquery.min.js"></script>
+<script src="../js/xhrConfig.js"></script>
+<script src="../js/actions.js"></script>
+<script src="../js/src/config/gameId.js"></script>
+<script src="../js/src/home/open.list.detail.js"></script>
+</body>
+
+</html>

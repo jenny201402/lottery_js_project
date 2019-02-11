@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/money.css">
+</head>
+<body ms-controller="money.qkjl.list">
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper" style="background: #ffffff">
+    <div class="mui-scroll table-list">
+        <div class="mui-row  list-th">
+            <div class="mui-col-xs-4">
+                时间
+            </div>
+            <div class="mui-col-xs-4">
+                金钱
+            </div>
+            <div class="mui-col-xs-4">
+                状态
+            </div>
+        </div>
+        <div ms-repeat="messageList" class="mui-row  list-td" ms-on-tap="showDetail(el)">
+            <div class="mui-col-xs-4">
+                {{el.applyTime|date("MM-dd")}}&nbsp;{{el.applyTime|date("HH:mm:ss")}}
+            </div>
+            <div class="mui-col-xs-4">
+                {{el.applyMoney|currency}}
+            </div>
+            <div class="mui-col-xs-4">
+                <span ms-if="el.checkStatus == 0">未受理</span>
+                <span ms-if="el.checkStatus == 2">取款成功</span>
+                <span ms-if="el.checkStatus == 3">取款失败</span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="qkjlList.js"></script>
+</body>
+</html>

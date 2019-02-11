@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="rechargType.css">
+</head>
+<body ms-controller="recharge.module1">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">{{title}}</h1>
+</header>
+<div class="mui-content">
+    <div class="recharge-module">
+        <div class="offline-pay-tip"><span class="mui-icon mui-icon-info"></span>请先转账成功后再点击下一步提交存款信息！</div>
+        <select class="mt8">
+            <option>{{pay_onlines.rechName}}</option>
+        </select>
+        <div class="offline-pay-tip mt10"><span class="mui-icon mui-icon-info"></span>入款卡号定期更换，请充值入款留意一下最新卡号，入错无法赔偿。</div>
+        <!--银行卡转账-->
+        <div ms-if="rechType == 'bankTransfer'" class="mt8 card-message">
+            <div>银行名称：{{pay_onlines.rechName}}</div>
+            <div>收款人：{{pay_onlines.payeeName}}</div>
+            <div>开户网点：{{pay_onlines.remark}}</div>
+            <div>银行账号：{{pay_onlines.payee}}</div>
+        </div>
+        <!--支付宝转账-->
+        <div ms-if="rechType == 'alipay'" class="mt8 card-message">
+            <div>姓名：{{pay_onlines.payeeName}}</div>
+            <div>账号：{{pay_onlines.payee}}</div>
+            <div style="height: 150px;width: 150px"><img style="width: 100%" ms-attr-src="pay_onlines.qrCode" alt="加载中"></div>
+            <div>付款说明：<span class="red">{{alipaysm}}</span></div>
+            <div>请在支付宝<span class="red">付款说明</span>填写此四位号码</div>
+        </div>
+        <!--微信转账-->
+        <div ms-if="rechType == 'weixin'" class="mt8 card-message">
+            <div>姓名：{{pay_onlines.payeeName}}</div>
+            <div>账号：{{pay_onlines.payee}}</div>
+            <div style="height: 150px;width: 150px"><img style="width: 100%" ms-attr-src="pay_onlines.qrCode" alt="加载中" title="加载中"></div>
+        </div>
+        <!--财付通转账-->
+        <div ms-if="rechType == 'cft'" class="mt8 card-message">
+            <div>姓名：{{pay_onlines.payeeName}}</div>
+            <div>账号：{{pay_onlines.payee}}</div>
+            <div style="height: 150px;width: 150px"><img style="width: 100%" ms-attr-src="pay_onlines.qrCode" alt="加载中" title="加载中"></div>
+        </div>
+        <div class="mt20">
+            <button type="button" ms-on-tap="nextHandler" data-loading-text="提交中" class="mui-btn next-pre-btn">下一步</button>
+        </div>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/extends.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="module1.js"></script>
+</body>
+</html>

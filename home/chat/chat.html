@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../css/mui.min.css">
+    <link rel="stylesheet" href="../../less/base.css">
+    <link href="../../css/mui.imageviewer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body ms-controller="base.chat">
+<div class="mui-content main">
+    <div class="chat-content">
+        <div class="chat-area">
+            <div class="chat-show" ms-on-tap="hideKeyword">
+                <div ms-repeat="messageList">
+                    <div ms-if="!el.owner" class="mui-card-header mui-card-media list">
+                        <img src="../../images/userJ.jpeg" />
+                        <div class="mui-media-body">
+                            <p>
+                                <span ms-if="el.type == 'text'" class="content">{{el.content}}</span>
+                                <span ms-if="el.type == 'img'"><img ms-class="msg-content-image" ms-attr-src="{{el.src}}" style="max-width: 100px;" /></span>
+                            </p>
+                        </div>
+                    </div>
+                    <div ms-if="el.owner" class="mui-card-header mui-card-media list-self">
+                        <img style="float: right" src="../../images/userJ.jpeg" />
+                        <div class="mui-media-body">
+                            <p>
+                                <span ms-if="el.type == 'text'" class="content">{{el.content}}</span>
+                                <span ms-if="el.type == 'img'"><img ms-class="msg-content-image" ms-attr-src="{{el.src}}" style="max-width: 100px;" /></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="box">
+                <textarea rows="2" ms-duplex="text" class="text-message"></textarea>
+                <div ms-on-tap="sendImg" class="img-btn"><span class="mui-icon mui-icon-image"></span></div>
+                <div ms-on-tap="sendMessage" class="send-btn">发送</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../js/vendor/mui.js"></script>
+<script src="../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../js/vendor/jquery.min.js"></script>
+<script src="../../js/vendor/mui.imageViewer.js"></script>
+<script src="../../js/vendor/md5.js"></script>
+<script src="../../js/extends.js"></script>
+<script src="../../js/xhrConfig.js"></script>
+<script src="../../js/actions.js"></script>
+<script src="chat.js"></script>
+</body>
+</html>

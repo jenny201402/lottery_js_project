@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="road.css">
+</head>
+<body ms-controller="record.road.ssc">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">路珠</h1>
+</header>
+<div class="mui-content road-content">
+    <div class="mui-row">
+        <div class="mui-col-xs-6">
+            路珠 > {{name}}
+        </div>
+        <div class="mui-col-xs-6">
+            <button ms-on-tap="refresh" type="button" class="refresh-btn">刷新</button>
+        </div>
+    </div>
+    <div class="title-list">
+        <div class="content">
+            <span ms-repeat="listTop" ms-class="active : activeTop == $key" class="list" ms-on-tap="chooseTypeTop($key)">{{$val.chname}}</span>
+        </div>
+    </div>
+    <div class="road-list">
+        <div class="content">
+            <span ms-repeat="resultListTop" class="result-list">{{el.name}}</span>
+        </div>
+        <div class="content">
+            <span ms-repeat="resultListTop" class="result-list">{{el.val}}</span>
+        </div>
+    </div>
+    <div class="title-list mt-20">
+        <div class="content">
+            <span ms-repeat="showListBottom" ms-class="active : activeBottom == el.name" class="list" ms-on-tap="chooseTypeBottom(el.name)">{{el.chname}}</span>
+        </div>
+    </div>
+    <div class="rode-down-list">
+        <table border="1" class="table-view">
+            <tr>
+                <td ms-repeat="resultListBottom" class="mui-text-center" style="vertical-align : top">
+                    <div class="load-td" ms-repeat-list="el">{{list}}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="../../../js/src/config/gameId.js"></script>
+<script src="sscroad.js"></script>
+</body>
+</html>

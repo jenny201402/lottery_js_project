@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="towface.css">
+</head>
+<body ms-controller="twoface.list" style="background: #FFFFFF">
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper two-face" style="background: #FFFFFF">
+    <div class="mui-scroll message-content" style="background: #FFFFFF">
+        <table border="1" class="table-view list">
+            <tr>
+                <td class="mui-text-center list-two-title">
+                    彩种
+                </td>
+                <td class="mui-text-center list-two-title">
+                    期数
+                </td>
+            </tr>
+            <tr ms-repeat="list">
+                <td class="mui-text-center">
+                    {{el.chname}}
+                </td>
+                <td class="mui-text-center">{{el.num}}</td>
+            </tr>
+            <tr ms-if="list.length < 1 && showView">
+                <td class="mui-text-center" colspan="2">暂无长龙数据</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="list.js"></script>
+</body>
+</html>

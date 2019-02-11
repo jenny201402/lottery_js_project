@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../css/mui.min.css">
+    <link href="../less/base.css" rel="stylesheet">
+    <link href="../less/my.css" rel="stylesheet">
+</head>
+<body ms-controller="my.home" style="background: #ffffff">
+    <div class="app-content">
+        <div class="my-message">
+            <img src="../images/userJ.jpeg" alt="">
+            <div class="messges-cont">
+                <div class="name">你好！{{username}}</div>
+                <div class="money">用户余额：<span class="red">{{userMoney}}</span>&nbsp;RMB<span ms-on-tap="refresh" class="refresh mui-icon mui-icon-refresh"></span></div>
+                <div class="red-bag">
+                    <a ms-on-tap="openRedbagModule">
+                        <img src="../images/my-hb.png" alt="">红包查询
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="mui-content my-list-content">
+            <ul class="mui-table-view mui-grid-view mui-grid-9">
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openPersonalModule">
+                        <img class="icon-img" src="../images/my-grzl.png" alt="">
+                        <div class="mui-media-body">个人资料</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openPasswordModule">
+                        <img class="icon-img" src="../images/my-dlmm.png" alt="">
+                        <div class="mui-media-body">登录密码</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openMessageModule">
+                        <img class="icon-img" src="../images/my-xxzx.png" alt="">
+                        <div class="mui-media-body">消息中心</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openMoneyModule">
+                        <img class="icon-img" src="../images/my-zjgl.png" alt="">
+                        <div class="mui-media-body">资金管理</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openQukuanPassModule">
+                        <img class="icon-img" src="../images/my-qkmm.png" alt="">
+                        <div class="mui-media-body">取款密码</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openBankcardModule">
+                        <img class="icon-img" src="../images/my-yhk.png" alt="">
+                        <div class="mui-media-body">银行卡</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openTodaysModule">
+                        <img class="icon-img" src="../images/my-jryj.png" alt="">
+                        <div class="mui-media-body">今日已结</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openBettingModule">
+                        <img class="icon-img" src="../images/my-xzjl.png" alt="">
+                        <div class="mui-media-body">下注记录</div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4">
+                    <a ms-on-tap="openServiceModule">
+                        <img class="icon-img" src="../images/my-kfzx.png" alt="">
+                        <div class="mui-media-body">客服中心</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script src="../js/vendor/mui.js"></script>
+    <script src="../js/vendor/avalon.modern.shim.js"></script>
+    <script src="../js/vendor/jquery.min.js"></script>
+    <script src="../js/xhrConfig.js"></script>
+    <script src="../js/extends.js"></script>
+    <script src="../js/actions.js"></script>
+    <script src="../js/src/home/my.home.js"></script>
+</body>
+</html>

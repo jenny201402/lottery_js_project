@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../less/my.css">
+</head>
+<body ms-controller="my.bankcard.update">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">{{title}}</h1>
+</header>
+<div class="mui-content">
+    <div class="bankcard-content" ms-if="showView">
+        <div class="update-box">
+            <div>
+                <select ms-duplex="bankName">
+                    <option value="">请选择银行</option>
+                    <option ms-repeat="bankList" ms-attr-value="el.bank_id">{{el.name}}</option>
+                </select>
+            </div>
+            <div>
+                <input ms-if="!placeholder" type="text" ms-duplex="subAddress" class="mui-input-clear" placeholder="请输入开户网点">
+                <input ms-if="placeholder" type="text" ms-duplex="subAddress" class="mui-input-clear" ms-attr-placeholder="bankInfo.subAddress">
+            </div>
+            <div>
+                <input ms-if="!placeholder" type="text" ms-duplex="cardNo" class="mui-input-clear" placeholder="请输入银行卡号">
+                <input ms-if="placeholder" type="text" ms-duplex="cardNo" class="mui-input-clear" ms-attr-placeholder="'旧卡'+bankInfo.cardNo">
+            </div>
+            <div style="margin-bottom: 10px;font-size: 14px;">绑卡人：{{bankInfo.fullName}}</div>
+            <div class="mt20">
+                <button type="button" ms-on-tap="save(this)" data-loading-text="提交中" class="mui-btn next-pre-btn">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="bankcard-update.js"></script>
+</body>
+</html>

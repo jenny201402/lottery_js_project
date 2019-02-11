@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/money.css">
+    <link rel="stylesheet" href="../../../less/my.css">
+</head>
+<body ms-controller="today.list">
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll todays-content">
+        <table border="1" class="table-view" style="margin-top: -1px">
+            <tr ms-repeat="List">
+                <td>
+                    <div>{{gameMap[el.gameId].name}}</div>
+                    <div>{{el.turnNum}}</div>
+                </td>
+                <td>
+                    <div>{{playCates[el.playCateId].name}}-{{plays[el.playId].name}}</div>
+                    <div>@{{el.odds}}</div>
+                    <div>#{{el.rebate}}</div>
+                </td>
+                <td>{{el.money|currency}}</td>
+                <td>
+                    <div ms-if="el.resultMoney > 0" class="red">{{el.resultMoney|currency}}</div>
+                    <div ms-if="el.resultMoney < 0" class="green">{{el.resultMoney|currency}}</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="https://fh888.f8710.com/static/gamedatas.js"></script>
+<script src="todayList.js"></script>
+</body>
+</html>

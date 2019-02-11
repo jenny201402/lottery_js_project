@@ -1,0 +1,13 @@
+.two-face .table-view {
+  width: 100%;
+  border: 1px solid #c8c7cc;
+  font-size: 14px;
+}
+.two-face .table-view.list td {
+  padding: 0 10px;
+  height: 40px;
+}
+.two-face .table-view td {
+  width: 50%;
+  padding: 10px;
+}

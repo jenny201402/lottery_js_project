@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../less/my.css">
+</head>
+<body ms-controller="bettingHistory.detail.list">
+<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+    <div class="mui-scroll betting-content">
+        <table border="1" class="table-view" style="margin-top: -1px">
+            <tr ms-repeat="list">
+                <td class="bbt" style="width: 25%">{{el.game_name}}</td>
+                <td class="bbt" style="width: 25%">{{el.betCount}}</td>
+                <td class="bbt" style="width: 25%">{{el.sumBetMoney}}</td>
+                <td class="bbt" style="width: 25%">{{el.sumBunko}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="bettingHistory.detail.list.js"></script>
+</body>
+</html>

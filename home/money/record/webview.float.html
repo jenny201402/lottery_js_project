@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/money.css">
+</head>
+<body style="background: transparent" ms-controller="webview.float">
+<div class="money-detail">
+    <div class="detail-title">查看详情</div>
+    <div ms-if="type == 1" style="height: 300px;overflow-y: auto">
+        <div class="detail-list">交易编号：{{info.orderNo}}</div>
+        <div class="detail-list">发起时间：{{info.statDate}}</div>
+        <div class="detail-list">交易类型：充值</div>
+        <div class="detail-list">交易金额：{{info.rechMoney}}</div>
+        <div class="detail-list">交易状态：{{getStatus(info.status)}}</div>
+        <div class="detail-list">充值方式：{{rechType(info.rechType)}}</div>
+        <div class="detail-list">卡号：</div>
+        <div class="detail-list">持卡人：</div>
+        <div class="detail-list">存款人：{{info.userName}}</div>
+        <div class="detail-list">存款时间：{{info.rechTime}}</div>
+        <div class="detail-list" ms-if="info.remark != null">审核备注：{{info.remark}}</div>
+    </div>
+    <div ms-if="type == 2">
+        <div class="detail-list">交易编号：{{info.orderNo}}</div>
+        <div class="detail-list">发起时间：{{info.applyTime}}</div>
+        <div class="detail-list">交易类型：提现</div>
+        <div class="detail-list">交易金额：{{info.applyMoney}}</div>
+        <div class="detail-list">手续费用：0</div>
+        <div class="detail-list">交易状态：{{getStatus2(info.checkStatus)}}</div>
+        <div class="detail-list">提现银行：{{info.bankName}}</div>
+        <div class="detail-list">提款卡号：{{info.bankCard}}</div>
+        <div class="detail-list">持卡人：{{info.bankAccount}}</div>
+        <div class="detail-list">审核时间：{{info.process_date}}</div>
+    </div>
+    <div class="detail-btn">
+        <button type="button" ms-on-tap="back" class="mui-btn">取消</button>
+        <button type="button" ms-on-tap="back" class="mui-btn mui-btn-primary">确定</button>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="../../../js/xhrConfig.js"></script>
+<script src="../../../js/actions.js"></script>
+<script src="webview.float.js"></script>
+</body>
+</html>

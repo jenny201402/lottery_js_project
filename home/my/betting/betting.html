@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="../../../css/mui.min.css">
+    <link rel="stylesheet" href="../../../less/base.css">
+    <link rel="stylesheet" href="../../../less/my.css">
+</head>
+<body ms-controller="my.betting">
+<header class="mui-bar mui-bar-nav title-bg">
+    <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left lottery-left-back"></a>
+    <h1 class="mui-title main-title">下注记录</h1>
+</header>
+<div class="mui-content">
+    <div class="betting-content">
+        <table border="1" class="table-view list">
+            <tr>
+                <td class="bbt">时间</td>
+                <td class="bbt">笔数</td>
+                <td class="bbt">输赢</td>
+            </tr>
+        </table>
+        <div class="bottom-title" ms-if="show">
+            <div class="mui-row">
+                <div class="mui-col-xs-6">
+                    总笔数：<span>{{otherData.totalBetCount}}</span>
+                </div>
+                <div class="mui-col-xs-6 mui-text-right">
+                    总输赢：<span>{{otherData.totalBetMoney}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../../js/vendor/mui.js"></script>
+<script src="../../../js/vendor/avalon.modern.shim.js"></script>
+<script src="../../../js/vendor/jquery.min.js"></script>
+<script src="betting.js"></script>
+</body>
+</html>
